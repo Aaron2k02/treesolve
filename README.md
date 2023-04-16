@@ -1,5 +1,5 @@
 # __TreeSolve - Open Source Web Application__
-
+ 
 ## __Group Members:__
 1. Aaron Chee Thian Shin
 2. Haniff
@@ -7,9 +7,15 @@
 4. Chun Hong
 5. Hazrin
 
+<br/>
+
 ## __Project Description:__
 
 TreeSolve is an Open-Source web application that helps to raise awareness among users and developers on the environmental issues that need to be addressed. The main goal of this TreeSolve project is to tackle the environmental issues caused by the absence of trees by providing platform for users to learn more about the current issues as mentioned, determine the best location and species for replantation in their area and share thier tree planting exprience information via this platform. TreeSolve also allows users to be part of the TreeSolve community by contributing to the source code, sharing their experience and access the latest information related to the project.
+
+### __Collaborative_env:__ https://www.figma.com/file/XjLmS35ucHVII79O4ctSXU/Taskboard?node-id=0%3A1&t=lrkfoS7lOxuJMDpK-1
+
+<br/>
 
 ## __Project Structure:__
 
@@ -28,6 +34,8 @@ The project structure is organized into the following:-
 * `samples` : This folder contains such as code examples or demos that showcase how to use the web application or its components.
 
 * `License` : This section contains the license for the project.
+
+<br/>
 
 ## __How to contribute:__
 
@@ -48,6 +56,8 @@ You can also contribute by:-
 * Providing feedback or suggestions
 * Writing documentation or tutorials
 * Sharing or promoting TreeSolve with others
+
+<br/>
 
 ## __License Information:__
 
