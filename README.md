@@ -3,7 +3,7 @@
 ## __Group Members:__
 1. Aaron Chee Thian Shin
 2. Haniff
-3. Muqri
+3. Muhammad Muqri Qawiem Bin Hanizam
 4. Chun Hong
 5. Hazrin
 
