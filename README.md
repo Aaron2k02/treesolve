@@ -4,7 +4,7 @@
 1. Aaron Chee Thian Shin
 2. Haniff
 3. Muqri
-4. Chun Hong
+4. Tan Chun Hong
 5. Hazrin
 
 <br/>
