@@ -5,7 +5,7 @@
 2. Haniff
 3. Muhammad Muqri Qawiem Bin Hanizam (U2000726)
 4. Chun Hong
-5. Hazrin
+5. Mohd Hazrin bin Mohamad (U2001399)
 
 <br/>
 
