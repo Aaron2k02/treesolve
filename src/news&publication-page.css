@@ -9,17 +9,17 @@
 }
 
 :root{
-    --color-primary: #3AA655;
-    --color-success: #00bf8e;
+    --color-primary: #3AA655; 
+    --color-success: #00bf8e; 
     --color-warning: #f7c94b;
-    --color-danger: #f75842;
+    --color-danger: #d95333;
     --color-danger-variant: rgba(247, 88, 66, 0.4);
     --color-white: #fff;
     --color-light: rgba(255, 255, 255, 0.7);
-    --color-black: #333;
-    --color-bg: #1E1F1C;
-    --color-bg1: #2F3C3E;
-    --color-bg2: #516D69;
+    --color-black: #010101;
+    --color-bg: #285136; 
+    --color-bg1: #2f603f; 
+    --color-bg2: #366d48;
 
     --container-width-lg: 76%;
     --container-width-md: 90%;
@@ -80,11 +80,11 @@ img{
 
 .btn{
     display: inline-block;
-    background: var(--color-white);
-    color: var(--color-black);
+    background: var(--color-primary);
+    color: var(--color-white);
     padding: 1rem 2rem;
     border: 1px solid transparent;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .btn:hover{
@@ -110,7 +110,7 @@ nav{
 
 /* Change navbar styles on scroll using JavScript */
 .window-scroll {
-    background: var(--color-primary);
+    background: var(--color-bg);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
@@ -132,17 +132,18 @@ nav button{
 }
 
 .nav-menu a{
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: var(--transition);
 }
 
 .nav-menu a:hover{
-    color: var(--color-bg2);
+    color: var(--color-white);
+    text-decoration: underline;
 }
 
 /*========================================= FOOTER =======================================*/
 footer{
-    background: var(--color-bg1);
+    background: var(--color-bg);
     padding-top: 5rem;
     font-size: 0.9rem;
 }
