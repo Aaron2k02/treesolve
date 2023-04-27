@@ -2,7 +2,7 @@
  
 ## __Group Members:__
 1. Aaron Chee Thian Shin (u2102810)
-2. Haniff
+2. Haniff bin Hasri (U2000464)
 3. Muhammad Muqri Qawiem Bin Hanizam (U2000726)
 4. Chun Hong
 5. Mohd Hazrin bin Mohamad (U2001399)
