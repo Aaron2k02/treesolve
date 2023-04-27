@@ -1,11 +1,11 @@
 # __TreeSolve - Open Source Web Application__
  
 ## __Group Members:__
-1. Aaron Chee Thian Shin
-2. Haniff
-3. Muqri
-4. Chun Hong
-5. Hazrin
+1. Aaron Chee Thian Shin (u2102810)
+2. Haniff bin Hasri (U2000464)
+3. Muhammad Muqri Qawiem Bin Hanizam (U2000726)
+4. Tan Chun Hong (U2102812)
+5. Mohd Hazrin bin Mohamad (U2001399)
 
 <br/>
 

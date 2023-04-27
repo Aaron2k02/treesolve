@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+            <!-- hmtl section , header, bopdy and footer -->
+    <head>
+
+        
+        <nav>
+            <!-- navigation header for pages-->
+        </nav>
+        // type of character inside document
+        <meta charset="UTF-8">
+        <!-- around 160 for search ranking -->
+        <meta name = "description" content = "your description" />
+        <meta name = "author" content = "your author" />
+        <meta name ="keywords" content = "tree problem, solve environmental issue" />
+        <!-- control how it will view in diff devices -->
+        <meta name = "viewport" content = "witdh=device-width, initial-scale=1.0"/> 
+        <!-- decriptions for the website google will search for metatag for relevances --> 
+        <meta name="description" content="This is website for environments that" >
+
+        <title> News and publication </title>
+
+    </head>
+
+    <!-- all content goes here -->
+    <!-- hierarchy is important for search engine -->
+    <main>
+
+        <article>
+            <!-- put article text here -->
+            <section>
+                <!-- section for content of the website-->
+
+                <h1> 
+                    <!-- include header for each section created-->
+                    <!-- define header in hierarchy fashion -->
+                </h1>
+
+                <aside>
+                    <!-- getting shown to user but not the fdirect content of the pages -->
+                </aside>
+                
+            </section>
+
+        </article>
+
+        <body style = "background:aquamarine">
+
+            <h1 style="color:azure">
+            News letter and publication
+            </h1>
+
+            <!-- paragraph can setting them selves
+            // create new line <br/>
+            // horizontol line to seperate the content <hr/>
+            // control size of text <big> </big>, <small> </small>
+            // subsript tag <p> H <sub> 2 </sub> </p>
+            // supersript tag <p> H <sup> 2 </sup> </p>
+            // -->
+            
+            <!-- add styling css-->
+            <p style="color:aqua; background-color:blue">
+            <i> Hello </i> <b> world! </b>
+            </p>
+
+            <!--link to other webiste or other section of web-->
+            <!-- include the https:// for each of the link created-->
+            <!-- -target="_blank" open up the link in new tabs pub biside href -->
+            <!-- link to another webpage href="web page name 'page2.html'"-->
+            <!-- if web page is in another subfolder then href = "webpage relative path"-->
+            <a href="create an external link" > <!-- text for the link--> <h1> hyperlink text </h1> </a>
+
+            <!-- Working with images-->
+            <!-- alt - if the image is not found which alternative text for the image -->
+            <!-- attribute to control sizing of images; width="100" height = "100"; can width attribute and the html will automatically resize the images height -->
+            <a href = "embed hyperlink inside the images" > 
+
+                <img  src="link to the image/ relative path to the image" alt = "text shown if images not found" /> 
+
+            </a>
+
+            <!-- include vedio-->
+
+            <vedio src="link to the vedio" ;poster ="thumbnail image for the vedio" ;loop ;controls ;width="300"> text that will be shown if the vedio is not shown to user</vedio>
+
+            <!-- click to embed vedio from youtube to copy and paste it in the section  <iframe > </iframe> -->
+
+            <!-- creating list -->
+
+            <ul> 
+                <!-- unordered list -->
+                <li> <!-- item <a href="#"> link to the item </a> --> </li>
+            </ul>
+
+            <!-- changes list numbering type="1" -->
+            <ol type="1">
+                <!-- ordered list & do list inside of list -->
+            </ol>
+
+            
+            <dl>
+                <!-- description list where item can have description -->
+                <dt> <!-- item --> </dt>
+                <dd> <!-- item description --> </dd>
+            </dl>
+
+            <table>
+                <!-- creating table in html -->
+
+                <thead> 
+                    <!-- represent 1 row -->
+                    <caption> <!-- caption for the tables; can also be formatted as the table header and etc --> </caption>
+                    <tr>
+                        <!-- table row-->
+                        <th> <!-- column title  --> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <!--colspan="2" How many column each individual data will take up the spaces -->
+                        <td colspan="2"> <!-- 1 item for 1 column in each of the table row --> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+               
+            <!-- containers for different html styling and element-->
+            
+            <div>
+            <!-- <div> block tags take up entire width of the space -->
+            </div>
+
+            <span> 
+            <!-- <span> inline tags where element only take amount of spaces that they needed -->
+            </span>
+
+            <!-- more info on input type visit w3schools on input types-->
+            <!-- allow user to interact with; will not work in html; the prompt will only work with javascript -->
+            <!--  type="text" will create a text box; value is the def value that will be shown to user -->
+            <input type="text" value="Enter your user name"/>
+            <!-- hide input; for confidential; checkbox; file; radio; 'name' for naming the attributes -->
+            <input type="password" />
+            <!-- text area; can be resize; to enter lot of text; submit; specified number of rows and collumns -->
+            <textarea rows = "10" cols = "10"> 
+                <!-- def text shown in the input field-->
+                default text that will be displayed 
+            </textarea>
+
+            <form>
+                <!-- wrapper for user input -->
+                <input type="submit" />
+            </form>
+
+                <!-- frameborder = 0; to remove the side navigation on scrolling of the website -->
+            <iframe src="source of the website"> 
+                <!-- embed other website -->
+                Text shown to user if the website is not shown to the user
+            </iframe>
+            
+        </body>
+
+    </main>
+
+    <footer>
+
+
+    </footer>
+
+</html>
