@@ -103,7 +103,7 @@ img{
     transform: translateY(-10%);
     animation: popup 1s ease-in-out forwards;
   }
-  @keyframes animate {
+  @keyframes popup {
     0% {
       opacity: 0;
       transform: translateY(-10%);
