@@ -97,6 +97,22 @@ img{
     color: var(--color-white);
 }
 
+/*animation*/
+.animate {
+  opacity: 0;
+    transform: translateY(-20%);
+    animation: popup 1s ease-in-out forwards;
+  }
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
 /* ==================================================== NAVBAR ================================================= */
 nav{
     background: transparent;
@@ -384,7 +400,12 @@ main{
   width: 100%;
 }
 
-
+iframe {
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+  border: 0;
+}
 
 /*================================ END OF PAGE CONTENT STYLING =====================================*/
 
