@@ -372,7 +372,7 @@ main{
 }
 
 .bg-image {
-    background-image: url("intro-bg.jpg");
+    background-image: url("./res/utro-les-tuman-priroda-bright.jpg");
     background-size: cover; /* adjust image size to cover the entire container */
     background-position: center; /* adjust image position */
     background-repeat: no-repeat; /* prevent image from repeating */
