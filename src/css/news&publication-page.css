@@ -221,7 +221,7 @@ header{
     height: auto;
     width: fit-content;
     margin-bottom: 5rem;
-    background: var(--color-bg1);
+    background: var(--color-bg);
 }
 
 .header-container{
@@ -257,7 +257,7 @@ header{
 .experience{
     height: 10rem;
     padding-top: 2rem;
-    background: var(--color-bg2);
+    background: var(--color-primary);
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     border: 1px solid transparent;
@@ -275,7 +275,7 @@ header{
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 1rem; /* 0 for top; auto for left rigt; 1 for bottom*/
-    border: 1rem solid var(--color-bg2);
+    border: 1rem solid var(--color-primary);
 }
 
 .profile-info{
@@ -284,7 +284,7 @@ header{
 }
 
 .experince-info{
-    background: var(--color-bg2);
+    background: var(--color-primary);
     padding: 2rem;
     position: relative;
     text-align: justify;
@@ -327,14 +327,14 @@ header{
 
 /*================================ END OF NEWS LETTER PAGE =================================*/
 .contact{
-    background: var(--color-bg1);
+    background: var(--color-bg2);
 }
 .contact h2{
     margin-bottom: 10rem;
 }
 
 .contact__container{
-    background-color: var(--color-bg2);
+    background-color: var(--color-bg);
     padding: 4rem;
     display: grid;
     grid-template-columns: 40% 60%;
@@ -389,6 +389,13 @@ header{
     width: 50%;
 }
 
+input[type="text"]::placeholder, 
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #fff; /* set the placeholder color to white */
+}
+
+
 input, 
 textarea{
     width: 100%;
@@ -403,12 +410,13 @@ textarea{
     cursor: pointer;
     border-radius: 10%;
     padding: 1.3rem;
+    background-color: var(--color-danger);
 }
 
 /*================================ END OF NEWS FORM =================================*/
 
 .faqs{
-    background: var(--color-bg1);
+    background: var(--color-bg);
     box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
 }
 
