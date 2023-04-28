@@ -97,6 +97,185 @@ img{
     color: var(--color-white);
 }
 
+/*animation*/
+.animate {
+  opacity: 0;
+    transform: translateY(-20%);
+    animation: popup 1s ease-in-out forwards;
+  }
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/*============= ACHIEVEMENTS ================*/
+.about-achievement{
+  margin-top: 3rem;
+}
+
+.about-achievement-container{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 5rem;
+}
+
+.about-achievement-right{
+  margin: 1.6rem 0 2.5rem;
+}
+
+.achievement-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.achievement-card{
+  background: var(--color-bg1);
+  padding: 1.6rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.achievement-card:hover{
+  background: var(--color-bg2);
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.achievement-icon{
+  background: var(--color-danger);
+  padding: 0.6rem;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.achievement-card:nth-child(2) .achievement-icon{
+  background: var(--color-success);
+}
+
+.achievement-card:nth-child(3) .achievement-icon{
+  background: var(--color-success);
+}
+
+.achievement-card p{
+  margin-top: 1rem;
+}
+
+/*============================= TEAM MEMBERS ==============================*/
+.team{
+  background: var(--color-bg1);
+  box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.team-member{
+  background: var(--color-bg2);
+  padding: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member:hover{
+  background: transparent;
+  border-color: var(--color-primary);
+}
+
+.team-member-image img{
+  width: 95%;
+}
+
+
+.team-member-info *{
+  text-align: center;
+  margin-top: 1.4rem;
+}
+
+.team-member-info p{
+  color: var(--color-light);
+}
+
+.team-member-socials{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-primary);
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+}
+
+.team-member:hover .team-member-socials{
+  right: 0;
+}
+
+.team-member-socials a{
+  padding: 1rem;
+}
+
+/*============== MEDIA QUERIES (TABLETS)=========================*/
+@media screen and (max-width: 1024px){
+  .about-achievement{
+      margin-top: 2rem;
+  }
+
+  .about-achievement-container{
+      grid-template-columns: 1fr;
+      gap: 4rem;
+  }
+
+  .about-achievement-left{
+      width: 80%;
+      margin: 0 auto;
+  }
+
+  .team-container{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+  }
+
+  .team-member{
+      padding: 1rem;
+  }
+}
+
+/*============== MEDIA QUERIES (MOBILE)=========================*/
+@media screen and (max-width: 600px) {
+  .achievement-cards{
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+  }
+
+  .team-container{
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+  }
+
+  .team-member{
+      padding: 0;
+  }
+
+  .team-member p{
+      margin-bottom: 1.5rem;
+  }
+}
 /* ==================================================== NAVBAR ================================================= */
 nav{
     background: transparent;
@@ -185,9 +364,211 @@ footer{
 
 /*================================ PAGE CONTENT STYLING START HERE =================================*/
 
+main{
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
 
+.bg-image {
+    background-image: url("intro-bg.jpg");
+    background-size: cover; /* adjust image size to cover the entire container */
+    background-position: center; /* adjust image position */
+    background-repeat: no-repeat; /* prevent image from repeating */
+    /* add other styles as needed */
+}
 
+.hr{
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+}
 
+.text-start {
+    text-align: left !important;
+  }
+  
+  .text-end {
+    text-align: right !important;
+  }
+  
+  .text-center {
+    margin-top: 30px;
+    text-align: center !important;
+  }
+  
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1320px;
+  }
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.row-cols-auto > * {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.row-cols-1 > * {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.row-cols-2 > * {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.row-cols-3 > * {
+  flex: 0 0 auto;
+  width: 33.3333333333%;
+}
+
+.row-cols-4 > * {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.row-cols-5 > * {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+.row-cols-6 > * {
+  flex: 0 0 auto;
+  width: 16.6666666667%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.col-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.col-5 {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 auto;
+  width: 83.33333333%;
+}
+
+.col-11 {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+  border: 0;
+}
 
 /*================================ END OF PAGE CONTENT STYLING =====================================*/
 
