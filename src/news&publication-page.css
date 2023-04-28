@@ -105,23 +105,21 @@ header{
     overflow: hidden;
     height: 70vh;
     margin-bottom: 5rem;
+    background: url("./adopt-a-tree.svg") ;
 }
 
 .header-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    justify-content: center;
     height: 100%;
+    text-align: center;
 }
 
-.header-left p{
-    text-align: justify;
-    margin: 1rem 0 2.4rem;
-}
-
-.header-right-image img{
-    width: 100%;
+.header-container h1{
+    color: #fff;
+    margin-left: 20rem;
 }
 
 /* ==================================================== END OF HEADER ================================================= */
