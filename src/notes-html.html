@@ -151,6 +151,8 @@
             <form>
                 <!-- wrapper for user input -->
                 <input type="submit" />
+            
+            
             </form>
 
                 <!-- frameborder = 0; to remove the side navigation on scrolling of the website -->
@@ -159,6 +161,140 @@
                 Text shown to user if the website is not shown to the user
             </iframe>
             
+
+            <!-- CSS Notes -->
+            <!-- css put priority on tagging-->
+            <!-- negative margin will fill the space margin -->
+            <!-- margin space outside element-->
+            <!-- padding space inside element -->
+            <!-- any changes of style on body will be relected or cascade to the element in body-->
+            <!-- Order of the style initialize in matters and ID will be prioritize first -->
+            <!-- !important the css will be priorize before id -->
+            <!-- !important the css will be priorize before id -->
+            <!-- .container will create cardview like property -->
+
+            <style>    
+
+                #headings {
+                    color: green;
+                    background-color: aqua;
+                    padding: 20px;
+                    margin: 20px;
+                }
+                
+                [type='checkbox'] {
+                    margin: 10px 0px 15px 0px;
+                    
+                }
+
+                .red-box {
+                    background-color: red;
+                    border-style: solid;
+                    margin: 20px 40px 20px 40px;
+                    padding: 1.5em;
+                }
+                
+                body{
+                    background-color: black;
+                    color: aquamarine;
+                    font-family: 'Courier New', Courier, monospace;
+                }
+
+                .pink-text {
+                    color: aqua;
+                }
+
+                .container {
+                    font-size: 40px;
+                    width: 100%;
+                    background: lightcoral;
+                    display: grid;
+                    grid-template-columns: 100px 100px 100px;
+
+                    /* add code below this line */
+                    
+                    grid-template-columns: auto;
+
+                    /* modify code above this line*/
+
+                    grid-template-rows: 50px 50px;
+
+                    /* gap between each column */
+                    grid-column-gap: auto;
+
+                    /* gap between each row */
+                    grid-template-rows: auto;
+                    
+                    /* gap within grid */
+                    grid-gap: 10px 20px;
+
+                     /* align all cell vertically need to put in parent variable */
+                     align-self: center;
+
+                    
+
+
+
+                }
+
+                .item5 { 
+                    background-color: aqua;
+
+                    /* start at column 2 ends at column 4 refer to grid property */
+                    grid-column: 2 / 4;
+
+                    /* take up las 2 rows */
+                    grid-row: 2 / 4;
+
+                    /* each grid are considered as cell*/
+
+                    /* align horizontolly */
+                    justify-self: center;
+
+                    /* align vertically */
+                    align-self: center;
+
+                    /* justify all cell */
+                    justify-items: center;
+
+                    /* place item in specific spot in grid area*/
+                    grid-area: footer;
+
+                    /* set size of row and column chnages depending on the size of the screen*/
+                    grid-template-columns: repeat(3, minmax(90px, 1fr));
+                    
+                    /* init label in each cell */
+                    grid-template-areas: 
+                    /* property of cell | label of cell */
+                    "red-box header" 
+                    "cell2" 
+                    "cell3";
+                    
+                    /* Flex to element */
+                    display: flex;
+
+                    /* Reverse flex property */
+                    flex-direction: row-reverse;
+
+                    /* shrink property control when item shrink */
+                    flex-shrink: 1;
+                    
+                    /* Flex default property */
+                    flex: 1 1 150px;
+
+
+                }
+
+            </style>
+
+            <div class="container">
+            <div class="d1"> 1 </div>
+
+            </div>
+
+            <h1 class="pink-text"> Hello world </h1>
+
+
         </body>
 
     </main>
