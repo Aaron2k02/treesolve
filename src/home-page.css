@@ -182,15 +182,47 @@ footer{
     padding: 1.2rem 0;
     border-top: 1px solid var(--color-bg2);
 }
-
 /*================================ PAGE CONTENT STYLING START HERE =================================*/
+header {
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    height: 35vh;
+    background-image: url("./intro-bg.jpg");
+}
 
+.header-container {
+    text-align: center;
+}
+
+main{
+    position: relative;
+    top: 5rem;
+    margin-bottom: 5rem;
+    background-color: var(--color-bg2);
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+}
+
+.main-left, .main-right{
+    text-align: justify;
+    margin: 1rem 0 2.4rem;
+}
+
+.main-right-image img, .main-left-image img{
+    width: 100%;
+}
 
 
 
 
 /*================================ END OF PAGE CONTENT STYLING =====================================*/
-
 /*          MEDIA QUERIES - FOR RESPONSIVE DESIGN BASED ON DEVICE SCREEN                    */
 /*================================ MEDIA QUERIES (TABLETS) =================================*/
 @media screen and (max-width: 1024px) {
