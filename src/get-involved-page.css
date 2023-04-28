@@ -212,7 +212,7 @@ header{
 
 /* ============================================================== GET INVOLVED ========================================================== */
 .categories{
-    background: var(--color-bg1);
+    background: var(--color-bg2);
     /* height: 42rem; */
 }
 
@@ -243,7 +243,7 @@ header{
 }
 
 .category {
-    background: var(--color-bg2);
+    background: var(--color-primary);
     padding: 2rem;
     border-radius: 2rem;
     transition: var(--transition);
@@ -297,7 +297,7 @@ header{
 }
 
 .course{
-    background: var(--color-bg1);
+    background: var(--color-primary);
     text-align: center;
     border: 1px solid transparent;
     transition: var(--transition);
@@ -324,8 +324,8 @@ header{
 
 /* ===================================================================== FAQS ============================================================ */
 .faqs{
-    background: var(--color-bg1);
-    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+    background: var(--color-bg2);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.2);
 }
 
 .faqs-container{
