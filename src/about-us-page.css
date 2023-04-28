@@ -100,13 +100,13 @@ img{
 /*animation*/
 .animate {
   opacity: 0;
-    transform: translateY(-10%);
+    transform: translateY(-20%);
     animation: popup 1s ease-in-out forwards;
   }
   @keyframes popup {
     0% {
       opacity: 0;
-      transform: translateY(-10%);
+      transform: translateY(-20%);
     }
     100% {
       opacity: 1;
@@ -380,7 +380,7 @@ main{
 }
 
 .hr{
-    color: white;
+    color: rgb(255, 255, 255);
     margin-top: 10px;
     width: 100%;
     border-width: 1px 0 0 0;
@@ -396,6 +396,7 @@ main{
   }
   
   .text-center {
+    color:white;
     margin-top: 30px;
     text-align: center !important;
   }
