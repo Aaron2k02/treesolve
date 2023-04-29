@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./news&publication-page.css">
+    <link rel="stylesheet" href="./css/news&publication-page.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -23,7 +23,7 @@
     <nav>
         <div class="container nav-container">
             <a href="home-page.html">
-                <img src="Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
+                <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
                 <li><a href="home-page.html">Home</a></li>
@@ -39,8 +39,12 @@
     <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
 
     <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
+    <header>
+        <div class="container header-container">
+            <h1>Protect Forests, Preserve the Planet!</h1>
+        </div>
+    </header>
     
-
     <!----------------------------------------------- END OF HEADER --------------------------------------------->
 
     <section class="container experience_Container mySwiper">
@@ -52,11 +56,11 @@
             <article class="experience swiper-slide">
                 
                 <div class="profile">
-                    <img src="./article1.PNG" alt="profile picture"> 
+                    <img src="./res/article1.PNG" alt="profile picture"> 
                 </div>
 
                 <div class="profile-info">
-                    <h4> find 3 article realted to that topic with article title , article date, short desc on the article and link to it </h4>
+                    <h4> What would happen if all the world’s trees disappeared? </h4>
                     <small> SEPTEMBER 2019 </small>
                 </div>
 
@@ -91,7 +95,7 @@
             <article class="experience swiper-slide">
                 
                 <div class="profile">
-                    <img src="./article2.PNG" alt="profile picture"> 
+                    <img src="./res/article2.PNG" alt="profile picture"> 
                 </div>
 
                 <div class="profile-info">
@@ -128,7 +132,7 @@
             <article class="experience swiper-slide">
                 
                 <div class="profile">
-                    <img src="./article3.PNG" alt="profile picture"> 
+                    <img src="./res/article3.PNG" alt="profile picture"> 
                 </div>
 
                 <div class="profile-info">
@@ -180,7 +184,7 @@
             <aside class="contact__aside">
 
                 <div class="aside__iamge"> 
-                    <img src="./register-for-news-letter.svg">
+                    <img src="./res/register-for-news-letter.svg">
                 </div>
 
                 <h2> Signup for tree news letter </h2>
@@ -266,7 +270,7 @@
             <article class="faq">
                 <div class="faq-icon"><i class="uil uil-plus"></i></div>
                 <div class="question-answer">
-                    <h4>Will my personal information be shared with third parties if I have registered</h4>
+                    <h4>Will my personal information be shared with third parties if I have registered ?</h4>
                     <p>
                         No, TreeSolve does not share your personal information with third parties. Your information is only used for communication purposes related to TreeSolve's news and publications. You can read more about the organization's privacy policy on their website.                    </p>
                 </div>
@@ -339,7 +343,7 @@
     <!------------------------------------------------ End Of Footer ---------------------------------------------->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
 
     <script>
         var swiper = new Swiper(".mySwiper", {
