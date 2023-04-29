@@ -15,7 +15,7 @@
     --color-danger: #d95333;
     --color-danger-variant: rgba(247, 88, 66, 0.4);
     --color-white: #fff;
-    --color-light: rgba(255, 255, 255, 0.7);
+    --color-light: rgba(2, 1, 1, 0.7);
     --color-black: #010101;
     --color-bg: #285136; 
     --color-bg1: #2f603f; 
@@ -372,7 +372,7 @@ main{
 }
 
 .bg-image {
-    background-image: url("intro-bg.jpg");
+    background-image: url("./res/intro-bg.jpg");
     background-size: cover; /* adjust image size to cover the entire container */
     background-position: center; /* adjust image position */
     background-repeat: no-repeat; /* prevent image from repeating */
