@@ -35,6 +35,75 @@ body{
     background: var(--color-bg);
 }
 
+/* table */
+
+#box1{
+    margin-top: 100px;
+    text-align: center;
+  }
+
+table,th,td{
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #3AA655;
+    border-collapse: collapse;
+    padding: 5px;
+}  
+
+th{
+    background-color: #2f603f;
+}
+#box1{
+    background-color: #3AA655 ;
+    word-wrap: break-word;
+    border-radius: 30px;
+}
+
+/*testimonial*/
+
+.testimonials_container{
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.testimonial{
+    padding-top: 2rem;
+}
+
+.avatar{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;   
+}
+
+.testimonial_info{
+    text-align: center;
+}
+
+.testimonial_body{
+    background: var(--color-bg2);
+    padding: 2rem;
+    margin-top: 3rem;
+    position: relative
+   
+}
+
+.testimonial_body::before{
+    content: "";
+    display: block;
+    background: var(--color-bg2);
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 50%;
+    top: -1.5rem;
+    transform: rotate(45deg);
+}
+
+/*end of testimonial*/
 .container{
     width: var(--container-width-lg);
     margin: 0 auto;
