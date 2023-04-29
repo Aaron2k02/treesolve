@@ -188,7 +188,7 @@ header {
     top: 5rem;
     overflow: hidden;
     height: 35vh;
-    background-image: url("./intro-bg.jpg");
+    background-image: url("../res/intro-bg.jpg");
 }
 
 .header-container {
