@@ -42,7 +42,7 @@ body{
     text-align: center;
   }
 
-table,th,td{
+table{
     text-align: center;
     border-radius: 10px;
     border: 2px solid #3AA655;
@@ -51,12 +51,17 @@ table,th,td{
 }  
 
 th{
-    background-color: #2f603f;
+    background-color: #3AA655;
 }
 #box1{
     background-color: #3AA655 ;
     word-wrap: break-word;
     border-radius: 30px;
+}
+
+tr:nth-child(even){
+    background-color: var(--color-bg2);
+
 }
 
 
