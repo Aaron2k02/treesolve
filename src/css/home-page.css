@@ -219,45 +219,6 @@ main{
     width: 100%;
 }
 
-.register__form{
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-right: 4rem;
-}
-
-.form__name{
-    display: flex;
-    gap: 1.2rem;
-}
-
-.register__form input[type="text"] {
-    width: 50%;
-}
-
-input[type="text"]::placeholder, 
-input[type="email"]::placeholder,
-textarea::placeholder {
-    color: #fff; 
-}
-
-input, 
-textarea{
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-.register__form .btn{
-    width: max-content;
-    margin-top: 1rem;
-    cursor: pointer;
-    border-radius: 10%;
-    padding: 1.3rem;
-    background-color: var(--color-danger);
-}
-
 /*================================ END OF PAGE CONTENT STYLING =====================================*/
 /*          MEDIA QUERIES - FOR RESPONSIVE DESIGN BASED ON DEVICE SCREEN                    */
 /*================================ MEDIA QUERIES (TABLETS) =================================*/
