@@ -215,12 +215,9 @@ main{
     margin: 1rem 0 2.4rem;
 }
 
-.main-right-image img, .main-left-image img{
+.main-image img{
     width: 100%;
 }
-
-
-
 
 /*================================ END OF PAGE CONTENT STYLING =====================================*/
 /*          MEDIA QUERIES - FOR RESPONSIVE DESIGN BASED ON DEVICE SCREEN                    */
