@@ -21,17 +21,11 @@ TreeSolve is an Open-Source web application that helps to raise awareness among 
 
 The project structure is organized into the following:- 
 
-* `docs` : This section contains the readme file and other related documentation.
-
 * `src` : This section contains the source code of the frontend and backend components
-
-* `tests` : This section contains unit tests and integration tests for the TreeSolve web application.
-
-* `.config` : This folder contains the configuration files, such as environment variables, database settings, API keys, etc. that are specific to your local machine or deployment environment.
 
 * `res` : This folder contains resources files, such as images, fonts, icons, etc. that are used by the web application interface or content.
 
-* `samples` : This folder contains such as code examples or demos that showcase how to use the web application or its components.
+* `.config` : This folder contains the configuration files, such as environment variables, database settings, API keys, etc. that are specific to your local machine or deployment environment.
 
 * `License` : This section contains the license for the project.
 
