@@ -211,32 +211,32 @@ header{
 }
 
 /* ============================================================== GET INVOLVED ========================================================== */
-.categories{
+.getInvolved{
     background: var(--color-bg2);
     /* height: 42rem; */
 }
 
-.categories h1{
+.getInvolved h1{
     line-height: 1;
     margin-bottom: 3rem;
 }
 
-.categories-container{
+.getInvolved-container{
     display: grid;
     grid-template-columns: 40% 60%;
     gap: 4rem;
 }
 
-.categories-left{
+.getInvolved-left{
     margin-right: 4rem;
 }
 
-.categories-left p{
+.getInvolved-left p{
     margin: 1rem 0 3rem;
     text-align: justify;
 }
 
-.categories-right{
+.getInvolved-right{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
@@ -286,38 +286,38 @@ header{
 }
 
 /* =============================================================== BE PART OF US ================================================= */
-.courses{
+.bePartOfUs{
     margin-top: 5rem;
 }
 
-.courses-container{
+.bePartOfUs-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.course{
+.bePartOfUs-activity{
     background: var(--color-primary);
     text-align: center;
     border: 1px solid transparent;
     transition: var(--transition);
 }
 
-.course:hover{
+.bePartOfUs-activity:hover{
     background: transparent;
     border-color: var(--color-white);
 }
 
-.course-info{
+.bePartOfUs-activity-info{
     padding: 2rem;
 }
 
-.course-info p{
+.bePartOfUs-activity-info p{
     margin: 1.2rem 0 2rem;
     font-size: 0.9rem;
 }
 
-.course-image img{
+.bePartOfUs-activity-image img{
     width: 100%;
     height: auto;
 }
@@ -470,25 +470,25 @@ header{
     }
 
     /*==================================== GET INVOLVED ======================================*/
-    .categories{
+    .getInvolved{
         height: auto;
     }
 
-    .categories-container{
+    .getInvolved-container{
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .categories-left{
+    .getInvolved-left{
         margin-right: 0;
     }
 
     /*=================================  BE PART OF US ====================================*/
-    .courses{
+    .bePartOfUs{
         margin-top: 0;
     }
 
-    .courses-container{
+    .bePartOfUs-container{
         grid-template-columns: 1fr 1fr;
     }
 
@@ -534,7 +534,7 @@ header{
     }
 
     /*================================ GET INVOLVED ======================================*/
-    .categories-right{
+    .getInvolved-right{
         grid-template-columns: 1fr 1fr;
         gap: 0.7rem;
     }
@@ -550,7 +550,7 @@ header{
     }
 
     /*================================  BE PART OF US ======================================*/
-    .courses-container{
+    .bePartOfUs-container{
         grid-template-columns: 1fr;
     }
 
