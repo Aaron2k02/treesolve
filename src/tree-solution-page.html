@@ -17,6 +17,14 @@
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("79bWaspqQMXZDOZ4T");
+})();
+</script>
 
 
 
@@ -47,7 +55,8 @@
         <br>
         <h2 id="box1">Tree Species Information</h2>
         <br>
-        <table>
+        <input type="text" id="searchInput" onkeyup="searchTrees()" placeholder="Search..."  >
+        <table id="treeTable">
             <tr>
                 <th>Name </th>
                 <th>Location </th>
@@ -61,7 +70,7 @@
                 <td>Africa, Madagascar, and Australia</td>
                 <td>Sandy or loamy soils</td>
                 <td>Large, bottle-shaped trunk, thick branches, and can reach up to 30 meters tall. Can store up to 120,000 liters of water in its trunk</td>
-                <td>Rich in Vitamin C, calcium, and iron. Its fruit and leaves have been used in traditional medicine to treat various ailments. Good for holding the land, particularly in sloped or loose-soil regions that are vulnerable to erosion. </td>
+                <td>Its fruit and leaves have been used in traditional medicine to treat various ailments. Good for holding the land, particularly in sloped or loose-soil regions that are vulnerable to erosion. </td>
                 <td><img src="res/Baobab.jpg" height="150" width="150"</td>
             </tr>
             <tr>
@@ -99,7 +108,7 @@
             <tr>
                 <td>Neem (Azadirachta indica) </td>
                 <td>India, Bangladesh, Pakistan, and Nepal </td>
-                <td> Sandy or loamy soils</td>
+                <td>Sandy or loamy soils</td>
                 <td>Fast-growing evergreen tree with a wide, spreading crown and grayish-brown bark. </td>
                 <td>Used in traditional medicine to treat various ailments, and its oil is used in cosmetics and pesticides. </td>
                 <td><img src="res/Neem.jpg" height="150" width="150"</td>
@@ -114,7 +123,7 @@
             </tr>
             <tr>
                 <td>Mango (Mangifera indica) </td>
-                <td> India, Southeast Asia, and South America </td>
+                <td>India, Southeast Asia, and South America </td>
                 <td>Sandy or loamy soils </td>
                 <td>Large, evergreen tree with a spreading crown and dark green leaves. </td>
                 <td>Provides shade and its fruit is consumed worldwide for its delicious taste and health benefits. </td>
@@ -142,8 +151,8 @@
         <!--end of table-->
         <section  class="container testimonial_Container mySwiper">
             <h2 id="box2">Community Discussion</h2>
-            <div class="swiper-wrapper"  >
-                <article class="testimonial swiper-slide">
+            <div class="swiper-wrapper" id="testimonial-slider" >
+                <article class="testimonial swiper-slide" >
                     <div class="avatar">
                         <img src="res/David Nowak.jpg" width="100" height="100">
                     </div>
@@ -210,7 +219,11 @@
                     <div class="testimonial_body">
                         <p>"Trees are not just a pretty decoration on our planet, they are the lungs that provide us with oxygen, the cooling system that reduces urban heat, and the air purifier that cleans our atmosphere." </p>
                     </div> 
-                </article> 
+                </article>
+                
+                <!-- <article class="testimonial swiper-slide" id="newTestimonialSlide">
+                    <!-- Placeholder for dynamically generated testimonial slide -->
+                </article> -->
                 </div>
             </div>
         </section>
@@ -227,21 +240,24 @@
                 <h2>Share Your Experience And Tips!</h2>
                 <p>Taking care of trees is an important responsibility that we all share as members of this planet. Thus, share your real world experience to the community to spread the awareness about importance of trees.</p>
             </aside>
-            <form class="contact_form">
+            <form  class="contact_form" id="testimonialForm" >
                 <div class="form_name">
-                    <input class="myplaceholder" type="text" name="First Name" placeholder="First Name" required>
-                    <input class="myplaceholder" type="text" name="Last Name" placeholder="Last Name" required>
-                    <input class="myplaceholder" type="text" name="Title" placeholder="Your Title" required>
+                    <input class="myplaceholder" name="firstname" type="text" id="First_Name" placeholder="First Name" required>
+                    <input class="myplaceholder" name="lastname" type="text" id="Last_Name" placeholder="Last Name" required>
+                    <input class="myplaceholder" name="title" type="text" id="Title" placeholder="Your Title" required>
 
                 </div>
-                <input class="myplaceholder" type="email" name="Email Address" placeholder="Your Email Address" required>
-                <textarea class="myplaceholder" name="Message" rows="7" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <input class="myplaceholder" type="email" name="email" id="Email_Address" placeholder="Your Email Address" required>
+                <textarea class="myplaceholder" name="message" id="Message" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" onclick="sendMail()" class="btn btn-primary">Submit</button>
 
             </form>
 
         </div>
+        
     </section>
+    
+
  
     <!------------------------------------------------- END OF PAGE CONTENT ------------------------------------->
 
@@ -324,7 +340,7 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     <script> var swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
         spaceBetween: 30,

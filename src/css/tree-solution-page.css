@@ -37,6 +37,21 @@ body{
 
 /*start of table*/
 
+#searchInput {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+  }
+  
+#searchInput:focus {
+    outline: none;
+    border-color: var(--color-bg2);
+    box-shadow: 0 0 3px rgba(51, 102, 255, 0.5);
+  }
+  
+
 #box1{
     margin-top: 100px;
     text-align: center;
@@ -52,7 +67,10 @@ table{
 
 th{
     background-color: #3AA655;
-}
+
+
+}    
+
 #box1{
     background-color: #3AA655 ;
     word-wrap: break-word;
