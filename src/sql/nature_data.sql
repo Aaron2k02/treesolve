@@ -29,13 +29,14 @@ ENGINE = InnoDB;
 -- Table `natureData`.`tree`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `natureData`.`tree` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `species` VARCHAR(45) NOT NULL,
   `location` VARCHAR(45) NULL,
   `soil_type` VARCHAR(45) NULL,
   `characteristic` VARCHAR(255) NULL,
   `benefits` VARCHAR(512) NULL,
   `image_path` VARCHAR(45) NULL,
-  PRIMARY KEY (`species`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -55,34 +56,21 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `natureData`.`activity`
+-- Table `natureData`.`forum`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `natureData`.`activity` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `description` VARCHAR(255) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `natureData`.`involve`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `natureData`.`involve` (
+CREATE TABLE IF NOT EXISTS `natureData`.`forum` (
+  `forum_id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
-  `activity_id` INT NOT NULL,
-  PRIMARY KEY (`user_id`, `activity_id`),
-  INDEX `fk_involve_activity_idx` (`activity_id` ASC) VISIBLE,
-  CONSTRAINT `fk_involve_activity`
-    FOREIGN KEY (`activity_id`)
-    REFERENCES `natureData`.`activity` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_involve_user`
+  `forum_title` VARCHAR(45) NOT NULL,
+  `forum_content` VARCHAR(150) NOT NULL,
+  `forum_image_path` VARCHAR(45) NULL,
+  PRIMARY KEY (`forum_id`),
+  INDEX `fk_user_forum_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_forum`
     FOREIGN KEY (`user_id`)
     REFERENCES `natureData`.`user` (`user_id`)
     ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
