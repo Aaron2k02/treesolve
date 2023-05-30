@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/home-page.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/home-page.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -18,21 +18,20 @@
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
-    <title>Home | TreeSolve</title>
+    <title>Admin Home | TreeSolve</title>
 </head>
 <body>
     <nav>
         <div class="container nav-container">
             <a href="home-page.html">
-                <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
+                <img src="../res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.html">Home</a></li>
-                <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login.php">Become one of us</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <li><a href="#">Admin Home</a></li>
+                <li><a href="tree/view.php">Tree</a></li>
+                <li><a href="article/view.php">Article</a></li>
+                <li><a href="forum/view.php">Forum</a></li>
+                <li><a href="user/view.php">User</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -54,62 +53,15 @@
         <div class="container main-container">
             <div class="main-left">
                 <div class="main-image">
-                    <img src="./res/tree.svg" alt="tree">
+                    <img src="../res/tree.svg" alt="tree">
                 </div>
             </div>
             <div class="main-right">
-                <h3>Who are us?</h3>
+                <h3>Admin Panel</h3>
                 <p>
-                    TreeSolve is an initiative dedicated to preserving the world's forests by educating people about their importance and promoting sustainable practices.
+                    TreeSolve Admin Panel provide a way to control all over your website.
                 </p>
                 <br>
-                <h3>What we provide?</h3>
-                <p>
-                    TreeSolve is the ultimate solution for community to plan, monitor, and share tree planting activities.
-                </p>
-                <br>
-                <a href="tree-solution-page.html" class="btn">Check the Solution</a>
-            </div>
-        </div>
-        <hr>
-        <div class="container main-container">
-            <div class="main-left">
-                <h3>Concern our planet</h3>
-                <p>
-                    TreeSolve can help in track environmental impact, such as carbon sequestration, air quality improvement, and habitat restoration.
-                </p>
-                <br>
-                <h3>Get connect to the community</h3>
-                <p>
-                    TreeSolve can help you to connect with other tree planters, join community projects, and access educational resources
-                </p>
-                <br>
-                <a href="get-involved-page.html" class="btn">Get Involved</a>
-            </div>
-            <div class="main-right">
-                <div class="main-image">
-                    <img src="./res/planting_tree.svg" alt="people planting tree">
-                </div>
-            </div>
-        </div>
-        <div class="container main-container">
-            <div class="main-left">
-                <div class="main-image">
-                    <img src="./res/Search-bro.svg" alt="news and publication">
-                </div>
-            </div>
-            <div class="main-right">
-                <h3>Concern our planet</h3>
-                <p>
-                    Stay updated on the latest news and insights from TreeSolve and our partners. Explore our blog and newsletter for inspiring stories on how to make a difference for the planet.
-                </p>
-                <br>
-                <h3>Don’t Miss Out on the Latest News from TreeSolve</h3>
-                <p>
-                    Subscribe to our newsletter and get monthly updates on our projects, achievements and events.
-                </p>
-                <br>
-                <a href="news&publication-page.html" class="btn">Learn more</a>
             </div>
         </div>
     </main>
@@ -127,11 +79,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.html">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="#">Admin Home</a></li>
+                    <li><a href="tree/view.php">Tree</a></li>
+                    <li><a href="article/view.php">Article</a></li>
+                    <li><a href="forum/view.php">Forum</a></li>
+                    <li><a href="user/view.php">User</a></li>
                 </ul>
             </div>
 
