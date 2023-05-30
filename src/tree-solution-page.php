@@ -1,14 +1,14 @@
-<!-- this page edited by chun hong -->
+<!-- this page edited by haniff & chunhong  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- CSS -->
     <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/home-page.css">
+    <link rel="stylesheet" href="./css/tree-solution-page.css">
+    <link rel="stylesheet" href="./css/admin-panel.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-
-    <title>Home | TreeSolve</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>Tree Solution | TreeSolve</title>
 </head>
 <body>
     <nav>
@@ -31,7 +31,6 @@
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -39,80 +38,57 @@
         </div>
     </nav>
     <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
-    <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
-    <header>
-        <div class="container header-container">
-            <br>
-            <br>
-            <br>
-            <h1>TreeSolve</h1>
-            <h2>Life Protect Life</h2>
-        </div>
-    </header>
 
+    <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
     <main>
-        <div class="container main-container">
-            <div class="main-left">
-                <div class="main-image">
-                    <img src="./res/tree.svg" alt="tree">
-                </div>
-            </div>
-            <div class="main-right">
-                <h3>Who are us?</h3>
-                <p>
-                    TreeSolve is an initiative dedicated to preserving the world's forests by educating people about their importance and promoting sustainable practices.
-                </p>
-                <br>
-                <h3>What we provide?</h3>
-                <p>
-                    TreeSolve is the ultimate solution for community to plan, monitor, and share tree planting activities.
-                </p>
-                <br>
-                <a href="tree-solution-page.html" class="btn">Check the Solution</a>
-            </div>
-        </div>
-        <hr>
-        <div class="container main-container">
-            <div class="main-left">
-                <h3>Concern our planet</h3>
-                <p>
-                    TreeSolve can help in track environmental impact, such as carbon sequestration, air quality improvement, and habitat restoration.
-                </p>
-                <br>
-                <h3>Get connect to the community</h3>
-                <p>
-                    TreeSolve can help you to connect with other tree planters, join community projects, and access educational resources
-                </p>
-                <br>
-                <a href="get-involved-page.html" class="btn">Get Involved</a>
-            </div>
-            <div class="main-right">
-                <div class="main-image">
-                    <img src="./res/planting_tree.svg" alt="people planting tree">
-                </div>
-            </div>
-        </div>
-        <div class="container main-container">
-            <div class="main-left">
-                <div class="main-image">
-                    <img src="./res/Search-bro.svg" alt="news and publication">
-                </div>
-            </div>
-            <div class="main-right">
-                <h3>Concern our planet</h3>
-                <p>
-                    Stay updated on the latest news and insights from TreeSolve and our partners. Explore our blog and newsletter for inspiring stories on how to make a difference for the planet.
-                </p>
-                <br>
-                <h3>Don’t Miss Out on the Latest News from TreeSolve</h3>
-                <p>
-                    Subscribe to our newsletter and get monthly updates on our projects, achievements and events.
-                </p>
-                <br>
-                <a href="news&publication-page.html" class="btn">Learn more</a>
-            </div>
+      <div class="container">
+        <br>
+        <h2 id="box1">Tree Species Information</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Name </th>
+                <th>Location </th>
+                <th>Soil Type </th>
+                <th>Characteristics </th>
+                <th>Benefits </th>
+                <th>Picture </th>
+                <th>Operation</th>
+            </tr>
+            <?php 
+                $username = "root"; 
+                $password = "1234"; 
+                $database = "natureData"; 
+                $mysqli = new mysqli("localhost", $username, $password, $database); 
+                $query = "SELECT * FROM `natureData`.`tree`";
+
+                if ($result = $mysqli->query($query)) {
+                    while ($row = $result->fetch_assoc()) {
+                        $species = $row["species"];
+                        $location = $row["location"];
+                        $soil_type= $row["soil_type"];
+                        $characteristic = $row["characteristic"];
+                        $benefits = $row["benefits"]; 
+                        $image_path = $row["image_path"];
+
+                        echo 
+                            '<tr> 
+                                <td>'.$species.'</td> 
+                                <td>'.$location.'</td> 
+                                <td>'.$soil_type.'</td> 
+                                <td>'.$characteristic.'</td> 
+                                <td>'.$benefits.'</td> 
+                                <td><img src="'.$image_path.'" height="150" width="150"></td>
+                            </tr>';
+                    }
+                    $result->free();
+                } 
+            ?>
+        </table>
+        <!--end of table-->
         </div>
     </main>
+ 
     <!------------------------------------------------- END OF PAGE CONTENT ------------------------------------->
 
     <footer class="footer">
@@ -179,7 +155,7 @@
 
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 30,
             pagination: {
                 el: ".swiper-pagination",
@@ -193,5 +169,15 @@
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script> var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });</script>
 </body>
 </html>
