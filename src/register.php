@@ -75,7 +75,7 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="home-page.php" method="post">
+                    <form action="login.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
                             <input type="text" name="firstname" required>

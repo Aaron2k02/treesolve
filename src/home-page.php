@@ -11,7 +11,15 @@
         $stmt = $con->prepare("select *from user where email = ?");
         $stmt-> bind_param("s", $email);
         $stmt->execute();
+
+        if ($result->num_rows == 1) {
+            echo "Successful login";
+        } else {
+            echo "Failed login";
+        }
     }
+    $stmt->close();
+    $con->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
