@@ -1,4 +1,18 @@
 <!-- this page edited by chun hong -->
+<?php
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //database connection
+    $con = new mysqli("localhost", "root", "", "naturedata");
+    if($con->connect_error){
+        die("Failed to connect : ".$con->connect_error);
+    }else{
+        $stmt = $con->prepare("select *from user where email = ?");
+        $stmt-> bind_param("s", $email);
+        $stmt->execute();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +37,11 @@
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="home-page.html">
+            <a href="home-page.php">
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.html">Home</a></li>
+                <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
@@ -118,7 +132,7 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.html" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="home-page.php" class="footer-logo"><h4>TreeSolve</h4></a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -127,7 +141,7 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.html">Home</a></li>
+                    <li><a href="home-page.php">Home</a></li>
                     <li><a href="tree-solution-page.html">Tree Solution</a></li>
                     <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                     <li><a href="get-involved-page.html">Get Involved</a></li>
