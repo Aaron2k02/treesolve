@@ -22,11 +22,11 @@
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="home-page.html">
+            <a href="home-page.php">
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.html">Home</a></li>
+                <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
@@ -49,15 +49,15 @@
             <div class="form-container">
                 <div class="form-box login">
                     <h2 style="color: black;">Login</h2>
-                    <form action="#">
+                    <form action="home-page.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input id="email" type="text" required>
+                            <input id="email" type="text" name="email" required>
                             <label>Email</label>
                         </div>
                         <div class="input-box">
                             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                            <input id="password" type="password" required>
+                            <input id="password" type="password" name="password" required>
                             <label>Password</label>
                         </div>
                         <div class="remember-forgot">
@@ -80,7 +80,7 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.html" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="home-page.php" class="footer-logo"><h4>TreeSolve</h4></a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -89,7 +89,7 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.html">Home</a></li>
+                    <li><a href="home-page.php">Home</a></li>
                     <li><a href="tree-solution-page.html">Tree Solution</a></li>
                     <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                     <li><a href="get-involved-page.html">Get Involved</a></li>
