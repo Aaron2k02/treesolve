@@ -33,7 +33,7 @@
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login.php">Become one of us</a></li>
+                <li><a href="login-page.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -75,7 +75,7 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="login.php" method="post">
+                    <form action="login-page.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
                             <input type="text" name="firstname" required>
@@ -107,7 +107,7 @@
                         <button id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</button>
                         <div class="login-register">
                             <p>Already have an account? 
-                                <a href="login.php" class="login-link">Login</a> </p>
+                                <a href="login-page.php" class="login-link">Login</a> </p>
                         </div>
                     </form>
                 </div>
