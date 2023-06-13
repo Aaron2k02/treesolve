@@ -21,9 +21,31 @@ CREATE TABLE IF NOT EXISTS `natureData`.`article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `content` MEDIUMBLOB NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+  `date` DATE NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `natureData`.`newsLetterRegistration`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `natureData`.`registration` (
+  `registration_id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `message` TEXT NOT NULL,
+  PRIMARY KEY (`registration_id`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `natureData`.`News Letter Registration Faqs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `natureData`.`newsLetterfaqs` (
+  `faq_id` INT NOT NULL AUTO_INCREMENT,
+  `question` VARCHAR(255) NOT NULL,
+  `answer` TEXT NOT NULL,
+  PRIMARY KEY (`faq_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `natureData`.`tree`
