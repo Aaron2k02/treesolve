@@ -1,14 +1,12 @@
-<!-- this page edited by haniff & chunhong  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/tree-solution-page.css">
-    <link rel="stylesheet" href="./css/admin-panel.css">
+    <link rel="stylesheet" href="./css/login-page.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -17,9 +15,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <title>Tree Solution | TreeSolve</title>
+
+    <title>login | TreeSolve</title>
 </head>
+
 <body>
     <nav>
         <div class="container nav-container">
@@ -31,70 +30,57 @@
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
+                <li><a href="login.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
         </div>
     </nav>
-    <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
-
-    <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
+    <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
-      <div class="container">
-        <br>
-        <h2 id="box1">Tree Species Information</h2>
-        <br>
-        <table>
-            <tr>
-                <th>Name </th>
-                <th>Location </th>
-                <th>Soil Type </th>
-                <th>Characteristics </th>
-                <th>Benefits </th>
-                <th>Picture </th>
-                <th>Operation</th>
-            </tr>
-            <?php 
-                $username = "root"; 
-                $password = "1234"; 
-                $database = "natureData"; 
-                $mysqli = new mysqli("localhost", $username, $password, $database); 
-                $query = "SELECT * FROM `natureData`.`tree`";
-
-                if ($result = $mysqli->query($query)) {
-                    while ($row = $result->fetch_assoc()) {
-                        $species = $row["species"];
-                        $location = $row["location"];
-                        $soil_type= $row["soil_type"];
-                        $characteristic = $row["characteristic"];
-                        $benefits = $row["benefits"]; 
-                        $image_path = $row["image_path"];
-
-                        echo 
-                            '<tr> 
-                                <td>'.$species.'</td> 
-                                <td>'.$location.'</td> 
-                                <td>'.$soil_type.'</td> 
-                                <td>'.$characteristic.'</td> 
-                                <td>'.$benefits.'</td> 
-                                <td><img src="'.$image_path.'" height="150" width="150"></td>
-                            </tr>';
-                    }
-                    $result->free();
-                } 
-            ?>
-        </table>
-        <!--end of table-->
+    <div class="border">
+        <div class="login-container">
+            <div class="image-container">
+                <div>
+                    <img src="./res/login-pic.png" alt="login-pic" height="420px" width="265px" align="left">
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="form-box login">
+                    <h2 style="color: black;">Login</h2>
+                    <form action="login.php" method="post">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input id="email" type="text" name="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input id="password" type="password" name="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <!--<label><input type="checkbox">Remember Me</label>-->
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" id="loginbtn" class="btnSubmit" style="color: white;">Login</button>
+                        <div class="login-register">
+                            <p>Don't have an account? 
+                                <a href="register.php" class="register-link" style="color: black;">Register</a> </p>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
         </div>
     </main>
- 
-    <!------------------------------------------------- END OF PAGE CONTENT ------------------------------------->
 
+    <!------------------------------------------------ End Of content ---------------------------------------------->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.php" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="login.php" class="footer-logo"><h4>TreeSolve</h4></a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -155,7 +141,7 @@
 
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 30,
             pagination: {
                 el: ".swiper-pagination",
@@ -163,21 +149,13 @@
             },
             //when window width is >= 600px
             breakpoints: {
-                600: {
+                1000: {
                     slidesPerView: 2
                 }
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
-    <script> var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 2,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });</script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
