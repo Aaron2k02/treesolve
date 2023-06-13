@@ -207,7 +207,6 @@
     <section class="faqs" id="faqs">
         <h2>Frequently Asked Questions</h2>
         <div class="container faqs-container">
-            
             <?php
             include './connect.php';
 
