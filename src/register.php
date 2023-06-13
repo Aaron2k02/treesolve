@@ -1,3 +1,6 @@
+<?php
+    require_once('config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,15 +25,15 @@
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="home-page.html">
+            <a href="home-page.php">
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.html">Home</a></li>
+                <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login.php">Become one of us</a></li>
+                <li><a href="login-page.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -39,6 +42,29 @@
     </nav>
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
+        <div>
+            <?php
+                if(isset($_POST['register']))
+                {
+                    $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
+                    $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
+                    $email = mysqli_real_escape_string($con,$_POST['email']);
+                    $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
+                    $password = mysqli_real_escape_string($con,$_POST['password']);
+
+                    $query = "insert into user (firstname, lastname, email,phonenumber, password) values ('$firstname', '$lastname', '$email', '$phonenumber', '$password')";
+                    $result = mysqli_query($con,$query);
+                    if($result)
+                    {
+                        echo ' Your Record Has Been Saved in the Database ';
+                    }
+                    else
+                    {
+                        echo ' Please Check Your Query ';
+                    }
+                }
+            ?>
+        </div>
     <div class="border-register">
         <div class="register-container">
             <div class="image-container-register" >
@@ -49,34 +75,39 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="#">
+                    <form action="login-page.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
-                            <input type="text" required>
-                            <label>Username</label>
+                            <input type="text" name="firstname" required>
+                            <label>First Name</label>
                         </div>
                         <div class="input-box">
-                            <span class="icon"><ion-icon name="location"></ion-icon></span>
-                            <input type="text" required>
-                            <label>Address</label>
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" name="lastname" required>
+                            <label>Last Name</label>
                         </div>
                         <div class="input-box">
                             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input id="emailreg" type="text" required>
+                            <input id="email" name="email" type="text" required>
                             <label>Email</label>
                         </div>
                         <div class="input-box">
+                            <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                            <input type="text" name="phonenumber" required>
+                            <label>Phone Number</label>
+                        </div>
+                        <div class="input-box">
                             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                            <input id="passreg" type="password" required>
+                            <input id="pass" type="password" name="password" required>
                             <label>Password</label>
                         </div>
                         <div class="remember-forgot">
                         
                         </div>
-                        <button id="regbtn" type="submit" class="btnSubmit" style="color: white;">Register</button>
+                        <button id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</button>
                         <div class="login-register">
                             <p>Already have an account? 
-                                <a href="login.php" class="login-link">Login</a> </p>
+                                <a href="login-page.php" class="login-link">Login</a> </p>
                         </div>
                     </form>
                 </div>
@@ -89,7 +120,7 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.html" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="home-page.php" class="footer-logo"><h4>TreeSolve</h4></a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -98,7 +129,7 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.html">Home</a></li>
+                    <li><a href="home-page.php">Home</a></li>
                     <li><a href="tree-solution-page.html">Tree Solution</a></li>
                     <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                     <li><a href="get-involved-page.html">Get Involved</a></li>
