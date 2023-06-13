@@ -9,8 +9,8 @@
     if($con->connect_error){
         die("Failed to connect: " . $con->connect_error);
     } else {
-        $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
-        $stmt->bind_param("s", $email);
+        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
