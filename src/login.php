@@ -1,6 +1,8 @@
 <?php
     require_once('config.php');
     
+    session_start();
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -13,10 +15,11 @@
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
-
+        
         if ($result->num_rows == 1) {
             // Successful login
-            header("Location: home-page.php");
+            $_SESSION['logged_in'] = true;
+            header("Location: home-page-in-session.php");
             exit;
         } else {
             // Failed login
