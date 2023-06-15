@@ -29,8 +29,8 @@
             <ul class="nav-menu">
                 <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
+                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                <li><a href="get-involved-page.php">Get Involved</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -105,8 +105,8 @@
                 <ul class="permalinks">
                     <li><a href="home-page.php">Home</a></li>
                     <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
+                    <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page.php">Get Involved</a></li>
                     <li><a href="about-us-page.html">About Us</a></li>
                 </ul>
             </div>

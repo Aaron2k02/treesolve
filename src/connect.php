@@ -1,6 +1,6 @@
 <?php 
     $username = "root"; 
-    $password = "1234"; 
+    $password = "U200@a7fb6c"; 
     $database = "natureData"; 
     $mysqli = new mysqli("localhost", $username, $password, $database); 
 ?>
