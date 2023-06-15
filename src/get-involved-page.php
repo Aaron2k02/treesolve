@@ -30,7 +30,7 @@
                 <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
+                <li><a href="get-involved-page.php">Get Involved</a></li>
                 <li><a href="login-page.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
@@ -113,7 +113,7 @@
                     <p>
                         As a member, you'll have access to exclusive resources and events, and be the first to know about our latest initiatives.
                     </p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="./login-page.php" class="btn btn-primary">Learn More</a>
                 </div>
             </article>
 
