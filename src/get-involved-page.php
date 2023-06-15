@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- this page edited by qawiem -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +17,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <!--Swiper JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
     <title>Get Involved | TreeSolve</title>
 </head>
+
 <body>
     <nav>
         <div class="container nav-container">
             <a href="home-page.php">
-                <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
+                <img src="./res/Treesolve-removebg-preview.png" alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
                 <li><a href="home-page.php">Home</a></li>
@@ -149,7 +151,33 @@
     <section class="faqs" id="faqs">
         <h2>Frequently Asked Questions</h2>
         <div class="container faqs-container">
-            <article class="faq">
+
+            <?php
+            include './connect.php';
+
+            $query = "SELECT * FROM getinvolvedfaqs";
+
+            if ($result = $mysqli->query($query)) {
+                while ($row = $result->fetch_assoc()) {
+                    $question = $row["question"];
+                    $answer = $row["answer"];
+
+                    echo '
+                    <article class="faq">
+                        <div class="faq-icon"><i class="uil uil-plus"></i></div>
+                        <div class="question-answer">
+                            <h4>'.$question.'</h4>
+                            <p>'.$answer.'</p>
+                        </div>
+                    </article>';
+                }
+                $result->free();
+            }
+
+            $mysqli ->close();
+            ?>
+
+            <!-- <article class="faq">
                 <div class="faq-icon"><i class="uil uil-plus"></i></div>
                 <div class="question-answer">
                     <h4>What is TreeSolve?</h4>
@@ -208,7 +236,7 @@
 
                     </p>
                 </div>
-            </article>
+            </article> -->
         </div>
     </section>
     <!----------------------------------------------------------- END OF FAQS ----------------------------------->
@@ -218,7 +246,9 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.php" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="home-page.php" class="footer-logo">
+                    <h4>TreeSolve</h4>
+                </a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -294,4 +324,5 @@
         });
     </script>
 </body>
+
 </html>
