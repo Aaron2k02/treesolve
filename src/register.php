@@ -42,7 +42,7 @@
     </nav>
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
-       
+   
     <div class="border-register">
         <div class="register-container">
             <div class="image-container-register" >
@@ -93,27 +93,38 @@
         </div>
         </div>
 
-        <?php
-            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname']))
-            {
-                $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
-                $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
-                $email = mysqli_real_escape_string($con,$_POST['mail']);
-                $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
-                $password = mysqli_real_escape_string($con,$_POST['password']);
+        
 
-                $query = "INSERT INTO `user` (`email`, `password`, `first_name`, `last_name`, `contact_number`, `in_mailing_list`) VALUES ('$email', '$password', '$firstname', '$lastname', '$phonenumber', 0)";
-                $result = mysqli_query($con,$query);
-                if($result)
-                {
-                    echo '<script>alert("Your Record Has Been Saved in the Database");</script>';
-                }
-                else
-                {
-                    echo '<script>alert("Please Check Your Query");</script>';
+        <?php
+            include './connect.php';
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+                $firstname = mysqli_real_escape_string($mysqli, $_POST['firstname']);
+                $lastname = mysqli_real_escape_string($mysqli, $_POST['lastname']);
+                $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+                $phonenumber = mysqli_real_escape_string($mysqli, $_POST['phonenumber']);
+                $password = mysqli_real_escape_string($mysqli, $_POST['password']);
+
+                // Validate input data
+                if (empty($firstname) || empty($lastname) || empty($email) || empty($phonenumber) || empty($password)) {
+                    echo 'Please fill in all the fields.';
+                } else {
+                    // Hash the password
+                    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+                    // Prepare and execute the query
+                    $query = "INSERT INTO user (`firstname`, `lastname`, `email`, `phonenumber`, `password`) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$hashedPassword')";
+                    $result = mysqli_query($mysqli, $query);
+
+                    if ($result) {
+                        echo 'Your Record Has Been Saved in the Database.';
+                    } else {
+                        echo 'Error: ' . mysqli_error($mysqli);
+                    }
                 }
             }
         ?>
+        
 
     </main>
 
