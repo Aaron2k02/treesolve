@@ -67,10 +67,9 @@
                 <th>Operation</th>
             </tr>
             <?php 
-                $username = "root"; 
-                $password = "1234"; 
-                $database = "natureData"; 
-                $mysqli = new mysqli("localhost", $username, $password, $database); 
+                                
+                include './connect.php';
+                
                 $query = "SELECT * FROM `natureData`.`tree`";
 
                 if ($result = $mysqli->query($query)) {

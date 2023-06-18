@@ -47,20 +47,17 @@
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
     <?php
-        require_once('connect.php');
-        
-        session_start();
+        include './connect.php';
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
             //database connection
-            $con = new mysqli("localhost", "root", "1234", "naturedata");
-            if($con->connect_error){
-                die("Failed to connect: " . $con->connect_error);
+            if($mysqli->connect_error){
+                die("Failed to connect: " . $mysqli->connect_error);
             } else {
-                $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+                $stmt = $mysqli->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
                 $stmt->bind_param("ss", $email, $password);
                 $stmt->execute();
                 $result = $stmt->get_result();
