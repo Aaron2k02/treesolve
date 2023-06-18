@@ -60,7 +60,7 @@
             if ($result->num_rows == 1) {
                 // Successful login
                 $_SESSION['logged_in'] = true;
-                header("Location: home-page-in-session.php");
+                header("Location: home-page.php");
                 exit;
             } else {
                 // Failed login
