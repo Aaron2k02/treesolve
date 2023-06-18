@@ -30,11 +30,17 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.html">Tree Solution</a></li>
+                <li><a href="tree-solution-page.php">Tree Solution</a></li>
                 <li><a href="news&publication-page.php">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.php">Get Involved</a></li>
-                <li><a href="login-page.php">Become one of us</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Become one of us</a></li>';
+                    }
+                ?>
+                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -258,10 +264,10 @@
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
                     <li><a href="home-page.php">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
+                    <li><a href="tree-solution-page.php">Tree Solution</a></li>
                     <li><a href="news&publication-page.php">News &amp; Publications</a></li>
                     <li><a href="get-involved-page.php">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="about-us-page.php">About Us</a></li>
                 </ul>
             </div>
 

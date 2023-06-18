@@ -29,12 +29,18 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page-in-session.php">Home</a></li>
-                <li><a href="tree-solution-page-in-session.php">Tree Solution</a></li>
-                <li><a href="news&publication-page-in-session.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page-in-session.html">Get Involved</a></li>
-                <li><a href="#" onclick="confirmLogout()">Log Out</a></li>
-                <li><a href="about-us-page-in-session.html">About Us</a></li>
+                <li><a href="home-page.php">Home</a></li>
+                <li><a href="tree-solution-page.php">Tree Solution</a></li>
+                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                <li><a href="get-involved-page.php">Get Involved</a></li>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Become one of us</a></li>';
+                    }
+                ?>
+                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -107,11 +113,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page-in-session.php">Home</a></li>
-                    <li><a href="tree-solution-page-in-session.php">Tree Solution</a></li>
-                    <li><a href="news&publication-page-in-session.php">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page-in-session.html">Get Involved</a></li>
-                    <li><a href="about-us-page-in-session.html">About Us</a></li>
+                    <li><a href="home-page.php">Home</a></li>
+                    <li><a href="tree-solution-page.php">Tree Solution</a></li>
+                    <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page.php">Get Involved</a></li>
+                    <li><a href="about-us-page.php">About Us</a></li>
                 </ul>
             </div>
 
