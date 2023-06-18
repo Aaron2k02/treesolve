@@ -102,11 +102,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.php">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="#">Admin Home</a></li>
+                    <li><a href="tree/view.php">Tree</a></li>
+                    <li><a href="article/view.php">Article</a></li>
+                    <li><a href="forum/view.php">Forum</a></li>
+                    <li><a href="user/view.php">User</a></li>
                 </ul>
             </div>
 
