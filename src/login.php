@@ -33,7 +33,7 @@
                 <?php
                     session_start();
                     if(isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
+                        echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
                     } else {
                         echo '<li><a href="login.php">Become one of us</a></li>';
                     }
