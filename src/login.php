@@ -44,30 +44,32 @@
         
         session_start();
 
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
-        //database connection
-        $con = new mysqli("localhost", "root", "1234", "naturedata");
-        if($con->connect_error){
-            die("Failed to connect: " . $con->connect_error);
-        } else {
-            $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
-            $stmt->bind_param("ss", $email, $password);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            
-            if ($result->num_rows == 1) {
-                // Successful login
-                $_SESSION['logged_in'] = true;
-                header("Location: home-page.php");
-                exit;
+            //database connection
+            $con = new mysqli("localhost", "root", "1234", "naturedata");
+            if($con->connect_error){
+                die("Failed to connect: " . $con->connect_error);
             } else {
-                // Failed login
-                echo "Failed login";
+                $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+                $stmt->bind_param("ss", $email, $password);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                if ($result->num_rows == 1) {
+                    // Successful login
+                    $_SESSION['logged_in'] = true;
+                    header("Location: home-page.php");
+                    exit;
+                } else {
+                    // Failed login
+                    echo "Failed login";
+                }
             }
         }
-
+        
         $stmt->close();
         $con->close();
     ?>

@@ -98,7 +98,7 @@
         <?php
             include './connect.php';
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'])) {
                 $firstname = mysqli_real_escape_string($mysqli, $_POST['firstname']);
                 $lastname = mysqli_real_escape_string($mysqli, $_POST['lastname']);
                 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
