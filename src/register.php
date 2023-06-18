@@ -123,7 +123,9 @@
                     $result = mysqli_query($mysqli, $query);
 
                     if ($result) {
-                        echo 'Your Record Has Been Saved in the Database.';
+                        $_SESSION['logged_in'] = true;
+                        header("Location: home-page.php");
+                        exit;
                     } else {
                         echo 'Error: ' . mysqli_error($mysqli);
                     }

@@ -26,18 +26,11 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.php">Get Involved</a></li>
-                <?php
-                    if(isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
-                    } else {
-                        echo '<li><a href="login.php">Become one of us</a></li>';
-                    }
-                ?>
-                <li><a href="about-us-page.php">About Us</a></li>
+                <li><a href="#">Admin Home</a></li>
+                <li><a href="tree/view.php">Tree</a></li>
+                <li><a href="article/view.php">Article</a></li>
+                <li><a href="forum/view.php">Forum</a></li>
+                <li><a href="user/view.php">User</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -46,33 +39,16 @@
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
     <?php
-        require_once('connect.php');
-        
         session_start();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            //database connection
-            $con = new mysqli("localhost", "root", "1234", "naturedata");
-            if($con->connect_error){
-                die("Failed to connect: " . $con->connect_error);
-            } else {
-                $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
-                $stmt->bind_param("ss", $email, $password);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                
-                if ($result->num_rows == 1) {
-                    // Successful login
-                    $_SESSION['logged_in'] = true;
-                    header("Location: home-page.php");
-                    exit;
-                } else {
-                    // Failed login
-                    echo "Failed login";
-                }
+            if($email == "admin@gmail.com" && $password == "12345") {
+                $_SESSION['admin_logged_in'] = true;
+                header("Location: home.php");
+                exit;
             }
         }
     ?>
