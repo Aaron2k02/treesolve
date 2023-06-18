@@ -32,8 +32,14 @@
                 <li><a href="home-page.php">Home</a></li>
                 <li><a href="tree-solution-page.php">Tree Solution</a></li>
                 <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login-page.php">Become one of us</a></li>
+                <li><a href="get-involved-page.php">Get Involved</a></li>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Become one of us</a></li>';
+                    }
+                ?>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -110,10 +116,10 @@
                     echo 'Please fill in all the fields.';
                 } else {
                     // Hash the password
-                    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                   
 
                     // Prepare and execute the query
-                    $query = "INSERT INTO user (first_name, last_name, email, contact_number, `password`, in_mailing_list) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$hashedPassword', 0)";
+                    $query = "INSERT INTO user (first_name, last_name, email, contact_number, `password`, in_mailing_list) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$password', 0)";
                     $result = mysqli_query($mysqli, $query);
 
                     if ($result) {
