@@ -1,4 +1,10 @@
 <!-- this page edited by chun hong -->
+<?php 
+    if(!isset($_SESSION['admin_logged_in'])) {
+        header("Location: ../home-page.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

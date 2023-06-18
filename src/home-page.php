@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!--Javascript file -->
+    <script src="./js/main.js"></script>
+
+    
 
     <title>Home | TreeSolve</title>
 </head>
@@ -27,17 +31,27 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login-page.php">Become one of us</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <?php
+                    session_start();
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
+                        echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
+                        echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
+                        echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
+                    } else {
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="login.php">Become one of us</a></li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
+                    }
+                ?>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
         </div>
     </nav>
+    <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
     <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
     <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
     <header>
@@ -68,7 +82,13 @@
                     TreeSolve is the ultimate solution for community to plan, monitor, and share tree planting activities.
                 </p>
                 <br>
-                <a href="tree-solution-page.php" class="btn">Check the Solution</a>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<a href="tree-solution-page.php" class="btn">Check the Solution</a>';
+                    } else {
+                        echo '<a href="login.php" class="btn">Check the Solution</a>';
+                    }
+                ?>
             </div>
         </div>
         <hr>
@@ -84,7 +104,13 @@
                     TreeSolve can help you to connect with other tree planters, join community projects, and access educational resources
                 </p>
                 <br>
-                <a href="get-involved-page.html" class="btn">Get Involved</a>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<a href="get-involved-page.php" class="btn">Get Involved</a>';
+                    } else {
+                        echo '<a href="login.php" class="btn">Get Involved</a>';
+                    }
+                ?>
             </div>
             <div class="main-right">
                 <div class="main-image">
@@ -109,7 +135,13 @@
                     Subscribe to our newsletter and get monthly updates on our projects, achievements and events.
                 </p>
                 <br>
-                <a href="news&publication-page.php" class="btn">Learn more</a>
+                <?php
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<a href="news&publication-page.php" class="btn">Learn more</a>';
+                    } else {
+                        echo '<a href="login.php" class="btn">Learn more</a>';
+                    }
+                ?>
             </div>
         </div>
     </main>
@@ -128,10 +160,10 @@
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
                     <li><a href="home-page.php">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="tree-solution-page.php">Tree Solution</a></li>
+                    <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page.php">Get Involved</a></li>
+                    <li><a href="about-us-page.php">About Us</a></li>
                 </ul>
             </div>
 
@@ -176,7 +208,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
-
+    
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
