@@ -67,6 +67,7 @@
                 echo "Failed login";
             }
         }
+
         $stmt->close();
         $con->close();
     ?>
