@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!--Javascript file -->
+    <script src="./js/main.js"></script>
 
     <title>News &amp; Publications | TreeSolve</title>
 </head>
@@ -31,13 +33,14 @@
                 <li><a href="tree-solution-page.html">Tree Solution</a></li>
                 <li><a href="news&publication-page.html">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login.php">Become one of us</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <li><a href="#" onclick="confirmLogout()">Log Out</a></li>
+                <li><a href="about-us-page-in-session.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
         </div>
     </nav>
+    <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
     <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
 
     <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
@@ -252,11 +255,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.html">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="home-page-in-session.php">Home</a></li>
+                    <li><a href="tree-solution-page-in-session.php">Tree Solution</a></li>
+                    <li><a href="news&publication-page-in-session.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page-in-session.html">Get Involved</a></li>
+                    <li><a href="about-us-page-in-session.html">About Us</a></li>
                 </ul>
             </div>
 
