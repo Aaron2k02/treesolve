@@ -30,8 +30,8 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                <li><a href="news&publication-page.html">News &amp; Publications</a></li>
+                <li><a href="tree-solution-page.php">Tree Solution</a></li>
+                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.html">Get Involved</a></li>
                 <li><a href="login-page.php">Become one of us</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
@@ -53,7 +53,7 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="login-page.php" method="post">
+                    <form action="register.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
                             <input type="text" name="firstname" required>
@@ -82,7 +82,7 @@
                         <div class="remember-forgot">
                         
                         </div>
-                        <button id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</button>
+                        <input id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</input>
                         <div class="login-register">
                             <p>Already have an account? 
                                 <a href="login-page.php" class="login-link">Login</a> </p>
@@ -92,6 +92,7 @@
             </div>
         </div>
         </div>
+
         
 
         <?php
@@ -124,6 +125,7 @@
             }
         ?>
         
+
     </main>
 
     <!------------------------------------------------ End Of content ---------------------------------------------->

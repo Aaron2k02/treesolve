@@ -61,6 +61,15 @@ CREATE TABLE IF NOT EXISTS `natureData`.`tree` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `natureData`.`Get Involved Faqs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `natureData`.`getInvolvedfaqs` (
+  `faq_id` INT NOT NULL AUTO_INCREMENT,
+  `question` VARCHAR(255) NOT NULL,
+  `answer` TEXT NOT NULL,
+  PRIMARY KEY (`faq_id`)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `natureData`.`user`
