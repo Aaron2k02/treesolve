@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/login-page.css">
+    <link rel="stylesheet" href="../css/login-page.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -23,7 +23,7 @@
     <nav>
         <div class="container nav-container">
             <a href="home-page.php">
-                <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
+                <img src="../res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
                 <li><a href="#">Admin Home</a></li>
@@ -56,7 +56,7 @@
         <div class="login-container">
             <div class="image-container">
                 <div>
-                    <img src="./res/login-pic.png" alt="login-pic" height="420px" width="265px" align="left">
+                    <img src="../res/login-pic.png" alt="login-pic" height="420px" width="265px" align="left">
                 </div>
             </div>
             <div class="form-container">
