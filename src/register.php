@@ -42,29 +42,7 @@
     </nav>
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
-        <div>
-            <?php
-                if(isset($_POST['register']))
-                {
-                    $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
-                    $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
-                    $email = mysqli_real_escape_string($con,$_POST['email']);
-                    $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
-                    $password = mysqli_real_escape_string($con,$_POST['password']);
-
-                    $query = "insert into user (firstname, lastname, email,phonenumber, password) values ('$firstname', '$lastname', '$email', '$phonenumber', '$password')";
-                    $result = mysqli_query($con,$query);
-                    if($result)
-                    {
-                        echo ' Your Record Has Been Saved in the Database ';
-                    }
-                    else
-                    {
-                        echo ' Please Check Your Query ';
-                    }
-                }
-            ?>
-        </div>
+       
     <div class="border-register">
         <div class="register-container">
             <div class="image-container-register" >
@@ -75,7 +53,7 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="login-page.php" method="post">
+                    <form action="register.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
                             <input type="text" name="firstname" required>
@@ -104,7 +82,7 @@
                         <div class="remember-forgot">
                         
                         </div>
-                        <button id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</button>
+                        <input id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</input>
                         <div class="login-register">
                             <p>Already have an account? 
                                 <a href="login-page.php" class="login-link">Login</a> </p>
@@ -114,6 +92,29 @@
             </div>
         </div>
         </div>
+
+        <?php
+            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname']))
+            {
+                $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
+                $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
+                $email = mysqli_real_escape_string($con,$_POST['mail']);
+                $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
+                $password = mysqli_real_escape_string($con,$_POST['password']);
+
+                $query = "INSERT INTO `user` (`email`, `password`, `first_name`, `last_name`, `contact_number`, `in_mailing_list`) VALUES ('$email', '$password', '$firstname', '$lastname', '$phonenumber', 0)";
+                $result = mysqli_query($con,$query);
+                if($result)
+                {
+                    echo '<script>alert("Your Record Has Been Saved in the Database");</script>';
+                }
+                else
+                {
+                    echo '<script>alert("Please Check Your Query");</script>';
+                }
+            }
+        ?>
+
     </main>
 
     <!------------------------------------------------ End Of content ---------------------------------------------->
