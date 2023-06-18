@@ -1,5 +1,5 @@
 <?php
-    require_once('config.php');
+    require_once('connect.php');
     
     session_start();
 
@@ -7,11 +7,10 @@
     $password = $_POST['password'];
 
     //database connection
-    $con = new mysqli("localhost", "root", "1234", "naturedata");
-    if($con->connect_error){
-        die("Failed to connect: " . $con->connect_error);
+    if($mysqli->connect_error){
+        die("Failed to connect: " . $mysqli->connect_error);
     } else {
-        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+        $stmt = $mysqli->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -27,5 +26,5 @@
         }
     }
     $stmt->close();
-    $con->close();
+    $mysqli->close();
 ?>
