@@ -29,19 +29,21 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.php">Get Involved</a></li>
                 <?php
                     session_start();
                     if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
+                        echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
+                        echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
                         echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
                     } else {
+                        echo '<li><a href="home-page.php">Home</a></li>';
                         echo '<li><a href="login.php">Become one of us</a></li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
                     }
                 ?>
-                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
