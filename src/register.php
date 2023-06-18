@@ -98,7 +98,7 @@
         <?php
             include './connect.php';
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'])) {
                 $firstname = mysqli_real_escape_string($mysqli, $_POST['firstname']);
                 $lastname = mysqli_real_escape_string($mysqli, $_POST['lastname']);
                 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
@@ -113,7 +113,7 @@
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                     // Prepare and execute the query
-                    $query = "INSERT INTO user (`firstname`, `lastname`, `email`, `phonenumber`, `password`) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$hashedPassword')";
+                    $query = "INSERT INTO user (first_name, last_name, email, contact_number, `password`, in_mailing_list) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$hashedPassword', 0)";
                     $result = mysqli_query($mysqli, $query);
 
                     if ($result) {
