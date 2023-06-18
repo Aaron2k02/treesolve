@@ -37,7 +37,7 @@
                     if(isset($_SESSION['logged_in'])) {
                         echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
                     } else {
-                        echo '<li><a href="login-page.php">Become one of us</a></li>';
+                        echo '<li><a href="login.php">Become one of us</a></li>';
                     }
                 ?>
                 <li><a href="about-us-page.html">About Us</a></li>
