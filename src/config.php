@@ -1,5 +1,5 @@
 <?php
-    $con= mysqli_connect('localhost', 'root', '', 'naturedata');
+    $con= mysqli_connect('localhost', 'root', '1234', 'naturedata');
  
     // Check connection
     if($con === false){

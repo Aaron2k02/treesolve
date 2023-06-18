@@ -5,7 +5,7 @@
     $password = $_POST['password'];
 
     //database connection
-    $con = new mysqli("localhost", "root", "", "naturedata");
+    $con = new mysqli("localhost", "root", "1234", "naturedata");
     if($con->connect_error){
         die("Failed to connect: " . $con->connect_error);
     } else {
