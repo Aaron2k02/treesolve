@@ -34,6 +34,7 @@
                 <li><a href="news&publication-page.php">News &amp; Publications</a></li>
                 <li><a href="get-involved-page.php">Get Involved</a></li>
                 <?php
+                    session_start();
                     if(isset($_SESSION['logged_in'])) {
                         echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
                     } else {
