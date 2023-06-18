@@ -1,10 +1,3 @@
-<!-- this page edited by chun hong -->
-<?php 
-    if(!isset($_SESSION['admin_logged_in'])) {
-        header("Location: ../home-page.php");
-        exit;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/home-page.css">
+    <link rel="stylesheet" href="./css/login-page.css">
     <!-- Iconscout Cdn-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!-- Google Fonts -->
@@ -24,13 +16,14 @@
     <!--Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
-    <title>Admin Home | TreeSolve</title>
+    <title>login | TreeSolve</title>
 </head>
+
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="home-page.html">
-                <img src="../res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
+            <a href="home-page.php">
+                <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
                 <li><a href="#">Admin Home</a></li>
@@ -43,40 +36,64 @@
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
         </div>
     </nav>
-    <!---------------------------------------------------- END OF NAVBAR ---------------------------------------->
-    <!----------------------------------------------- PAGE CONTENT START HERE ----------------------------------->
-    <header>
-        <div class="container header-container">
-            <br>
-            <br>
-            <br>
-            <h1>TreeSolve</h1>
-            <h2>Life Protect Life</h2>
-        </div>
-    </header>
-
+    <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
-        <div class="container main-container">
-            <div class="main-left">
-                <div class="main-image">
-                    <img src="../res/tree.svg" alt="tree">
+    <?php
+        session_start();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            if($email == "admin@gmail.com" && $password == "12345") {
+                $_SESSION['admin_logged_in'] = true;
+                header("Location: home.php");
+                exit;
+            }
+        }
+    ?>
+    <div class="border">
+        <div class="login-container">
+            <div class="image-container">
+                <div>
+                    <img src="./res/login-pic.png" alt="login-pic" height="420px" width="265px" align="left">
                 </div>
             </div>
-            <div class="main-right">
-                <h3>Admin Panel</h3>
-                <p>
-                    TreeSolve Admin Panel provide a way to control all over your website.
-                </p>
-                <br>
+            <div class="form-container">
+                <div class="form-box login">
+                    <h2 style="color: black;">Login</h2>
+                    <form action="login.php" method="post">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input id="email" type="text" name="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input id="password" type="password" name="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <!--<label><input type="checkbox">Remember Me</label>-->
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" id="loginbtn" class="btnSubmit" style="color: white;">Login</button>
+                        <div class="login-register">
+                            <p>Don't have an account? 
+                                <a href="register.php" class="register-link" style="color: black;">Register</a> </p>
+                        </div>
+                    </form>
+                </div>
+                </div>
             </div>
         </div>
     </main>
-    <!------------------------------------------------- END OF PAGE CONTENT ------------------------------------->
 
+    <!------------------------------------------------ End Of content ---------------------------------------------->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-1">
-                <a href="home-page.html" class="footer-logo"><h4>TreeSolve</h4></a>
+                <a href="login.php" class="footer-logo"><h4>TreeSolve</h4></a>
                 <p>
                     Protect Forests,<br> Preserve the Planet !
                 </p>
@@ -85,11 +102,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="#">Admin Home</a></li>
-                    <li><a href="tree/view.php">Tree</a></li>
-                    <li><a href="article/view.php">Article</a></li>
-                    <li><a href="forum/view.php">Forum</a></li>
-                    <li><a href="user/view.php">User</a></li>
+                    <li><a href="home-page.php">Home</a></li>
+                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
+                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page.html">Get Involved</a></li>
+                    <li><a href="about-us-page.html">About Us</a></li>
                 </ul>
             </div>
 
@@ -145,11 +162,13 @@
             },
             //when window width is >= 600px
             breakpoints: {
-                600: {
+                1000: {
                     slidesPerView: 2
                 }
             }
         });
     </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

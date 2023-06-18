@@ -69,9 +69,6 @@
                 }
             }
         }
-        
-        $stmt->close();
-        $con->close();
     ?>
     <div class="border">
         <div class="login-container">
