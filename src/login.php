@@ -106,6 +106,10 @@
                             <p>Don't have an account? 
                                 <a href="register.php" class="register-link" style="color: black;">Register</a> </p>
                         </div>
+                        <div class="login-register">
+                            <p>Admin Login
+                                <a href="./admin/login.php" class="register-link" style="color: black;">Register</a> </p>
+                        </div>
                     </form>
                 </div>
                 </div>
