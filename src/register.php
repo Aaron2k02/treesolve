@@ -124,7 +124,6 @@
 
                     if ($result) {
                         $_SESSION['logged_in'] = true;
-                        header("Location: home-page.php");
                         exit;
                     } else {
                         echo 'Error: ' . mysqli_error($mysqli);
