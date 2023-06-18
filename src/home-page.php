@@ -42,7 +42,7 @@
                         echo '<li><a href="login.php">Become one of us</a></li>';
                     }
                 ?>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
