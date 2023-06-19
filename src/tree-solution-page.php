@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <!--Javascript file -->
     <script src="./js/main.js"></script>
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init("79bWaspqQMXZDOZ4T");
+    })();
+</script>
+
+
     <title>Tree Solution | TreeSolve</title>
 </head>
 <body>
@@ -29,18 +38,21 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.php">Get Involved</a></li>
                 <?php
+                    session_start();
                     if(isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
+                        echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
+                        echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
+                        echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
                     } else {
+                        echo '<li><a href="home-page.php">Home</a></li>';
                         echo '<li><a href="login.php">Become one of us</a></li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
                     }
                 ?>
-                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -55,7 +67,8 @@
         <br>
         <h2 id="box1">Tree Species Information</h2>
         <br>
-        <table>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="searchTrees()">
+        <table id="treeTable">
             <tr>
                 <th>Name </th>
                 <th>Location </th>
@@ -63,14 +76,13 @@
                 <th>Characteristics </th>
                 <th>Benefits </th>
                 <th>Picture </th>
-                <th>Operation</th>
             </tr>
             <?php 
                 $username = "root"; 
                 $password = "1234"; 
                 $database = "natureData"; 
                 $mysqli = new mysqli("localhost", $username, $password, $database); 
-                $query = "SELECT * FROM `natureData`.`tree`";
+                $query = "SELECT * FROM natureData.tree";
 
                 if ($result = $mysqli->query($query)) {
                     while ($row = $result->fetch_assoc()) {
@@ -96,8 +108,112 @@
             ?>
         </table>
         <!--end of table-->
+
+        <section  class="container testimonial_Container mySwiper">
+            <h2 id="box2">Community Discussion</h2>
+            <div class="swiper-wrapper"  >
+                <article class="testimonial swiper-slide">
+                    <div class="avatar">
+                        <img src="res/David Nowak.jpg" width="100" height="100">
+                    </div>
+                    <div class="testimonial_info">
+                        <h5>Dr. David Nowak</h5>
+                        <small>Senior Scientist and Team Leader with the USDA Forest Service</small>
+                    </div>
+                    <div class="testimonial_body">
+                        <p>"Taking care of trees is not rocket science, but it does require knowledge, skill, and effort. Proper pruning, planting, and maintenance can ensure a tree's health and longevity, which in turn provides numerous benefits to our communities and the environment."</p>
+                    </div>
+                </article>
+            
+                
+        <article class="testimonial swiper-slide">
+                    <div class="avatar">
+                        <img src="res/Nalini.jpeg" width="100" height="100">
+                    </div>
+                    <div class="testimonial_info">
+                        <h5> Dr. Nalini Nadkarni</h5>
+                        <small> Professor of Biology at the University of Utah, United States of America</small>
+                    </div>
+                    <div class="testimonial_body">
+                        <p>"To care for trees is to care for life."</p>
+                    </div>
+                    
+                </article>
+            
+                <article class="testimonial swiper-slide">
+                    <div class="avatar">
+                        <img src="res/James.jpeg" width="100" height="100" >
+                    </div>
+                    <div class="testimonial_info">
+                        <h5>James Urban</h5>
+                        <small>FASLA, ISA, renowned landscape architect and urban tree expert.</small>
+                    </div>
+                    <div class="testimonial_body">
+                        <p>"Proper tree care is not just about taking care of the tree, it's about taking care of the entire ecosystem."</p>
+                    </div>
+                </article>
+            
+                
+        <article class="testimonial swiper-slide">
+                    <div class="avatar">
+                        <img src="res/Jason.jpg" width="100" height="100">
+                    </div>
+                    <div class="testimonial_info">
+                        <h5>Jason Grabosky</h5>
+                        <small>PhD, Associate Professor of Urban Forestry at Rutgers University</small>
+                    </div>
+                    <div class="testimonial_body">
+                        <p>"One of the biggest misconceptions about tree care is that it's a one-time event. Trees are living things and require ongoing care throughout their lifetime." </p>
+                    </div>
+                </article>
+            
+                
+        <article class="testimonial swiper-slide">
+                    <div class="avatar">
+                        <img src="res/Akira.jpg" width="100" height="100">
+                    </div>
+                    <div class="testimonial_info">
+                        <h5>Dr. Akira Miyawaki</h5>
+                        <small>Botanist and expert in forest restoration, Takahashi, Japan</small>
+                    </div>
+                    <div class="testimonial_body">
+                        <p>"Trees are not just a pretty decoration on our planet, they are the lungs that provide us with oxygen, the cooling system that reduces urban heat, and the air purifier that cleans our atmosphere." </p>
+                    </div> 
+                </article> 
+                </div>
+
+            </section>
+
         </div>
     </main>
+
+     <!--end of community discussion-->
+
+     <section class="contact">
+        <div class="container contact_container">
+            <aside class="contact_aside">
+                <div class="aside_image">
+                    <img src="">                
+                </div>
+                <h2>Share Your Experience And Tips!</h2>
+                <p>Taking care of trees is an important responsibility that we all share as members of this planet. Thus, share your real world experience to the community to spread the awareness about importance of trees.</p>
+            </aside>
+            <form  class="contact_form" id="testimonialForm" >
+                <div class="form_name">
+                    <input class="myplaceholder" name="firstname" type="text" id="First_Name" placeholder="First Name" required>
+                    <input class="myplaceholder" name="lastname" type="text" id="Last_Name" placeholder="Last Name" required>
+                    <input class="myplaceholder" name="title" type="text" id="Title" placeholder="Your Title" required>
+
+                </div>
+                <input class="myplaceholder" type="email" name="email" id="Email_Address" placeholder="Your Email Address" required>
+                <textarea class="myplaceholder" name="message" id="Message" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" onclick="sendMail()" class="btn btn-primary">Submit</button>
+
+            </form>
+
+        </div>
+        
+    </section>
  
     <!------------------------------------------------- END OF PAGE CONTENT ------------------------------------->
 
@@ -191,3 +307,5 @@
       });</script>
 </body>
 </html>
+C:\Users\hzrn\Downloads\open source\treesolve\src\tree-solution-page.php
+C:\xampp\htdocs\treesolve\src\tree-solution-page.php
