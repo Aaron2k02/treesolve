@@ -72,6 +72,20 @@ CREATE TABLE IF NOT EXISTS `natureData`.`getInvolvedfaqs` (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `natureData`.`Get Involved Adopt-A-Tree`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `natureData`.`getInvolvedAdoptATree` (
+  `adoptatree_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `phone` VARCHAR(20) NOT NULL,
+  `availability_date` DATE NOT NULL,
+  `availability_time` TIME NOT NULL,
+  `additional_request` TEXT,
+  PRIMARY KEY (`adoptatree_id`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `natureData`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `natureData`.`user` (
