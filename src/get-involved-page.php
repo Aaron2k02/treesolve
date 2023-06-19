@@ -29,18 +29,21 @@
                 <img src="./res/Treesolve-removebg-preview.png" alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.php">Get Involved</a></li>
                 <?php
-                    if(isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="#" onclick="confirmLogout()">Log Out</a></li>';
-                    } else {
-                        echo '<li><a href="login.php">Become one of us</a></li>';
-                    }
+                session_start();
+                if (isset($_SESSION['logged_in'])) {
+                    echo '<li><a href="home-page.php">Home</a></li>';
+                    echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
+                    echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
+                    echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
+                    echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
+                    echo '<li><a href="about-us-page.php">About Us</a></li>';
+                } else {
+                    echo '<li><a href="home-page.php">Home</a></li>';
+                    echo '<li><a href="login.php">Become one of us</a></li>';
+                    echo '<li><a href="about-us-page.php">About Us</a></li>';
+                }
                 ?>
-                <li><a href="about-us-page.php">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -121,7 +124,7 @@
                     <p>
                         As a member, you'll have access to exclusive resources and events, and be the first to know about our latest initiatives.
                     </p>
-                    <a href="./login-page.php" class="btn btn-primary">Learn More</a>
+                    <a href="./login.php" class="btn btn-primary">Learn More</a>
                 </div>
             </article>
 
@@ -134,7 +137,7 @@
                     <p>
                         Support our conservation efforts by donating to plant and maintain trees, combat deforestation, and promote sustainable practices.
                     </p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a class="btn btn-primary">Learn More</a>
                 </div>
             </article>
 
@@ -147,11 +150,70 @@
                     <p>
                         Join TreeSolve's volunteer team and work towards a greener future through tree planting, education, and community outreach.
                     </p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a class="btn btn-primary" onclick="showPopupForm('Volunteering')">Learn More</a>
                 </div>
             </article>
         </div>
     </section>
+
+    <div class="popup-form-overlay" id="popupFormOverlay"></div>
+    <div class="popup-form" id="popupForm">
+        <h3 id="popupFormTitle"></h3>
+        <form action="" method="POST">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="availabilityDate">Availability Date:</label>
+            <input type="date" id="availabilityDate" name="availabilityDate" required>
+
+            <label for="availabilityTime">Availability Time:</label>
+            <input type="time" id="availabilityTime" name="availabilityTime" required>
+
+            <label for="additionalRequest">Additional Requests:</label>
+            <textarea id="additionalRequest" name="additionalRequest"></textarea>
+
+            <button type="submit" name="submit" class="btn btn-primary" placeholder=""> Register </button>
+
+            <!-- Close button/link -->
+            <button type="button" class="btn btn-primary" onclick="closePopupForm()">Close</button>
+        </form>
+    </div>
+
+    <?php
+    include './connect.php';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $availabilityDate = $_POST['availabilityDate'];
+        $availabilityTime = $_POST['availabilityTime'];
+        $additionalRequest = $_POST['additionalRequest'];
+
+        // Insert the form data into the 'getInvolvedAdoptATree' table
+        $stmt = $mysqli->prepare("INSERT INTO `getInvolvedAdoptATree` (name, email, phone, availability_date, availability_time, additional_request) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $name, $email, $phone, $availabilityDate, $availabilityTime, $additionalRequest);
+        $stmt->execute();
+
+        // Check if the insertion was successful
+        if ($stmt->affected_rows > 0) {
+            echo '<script>alert("Thank you for your registering!");</script>';
+        } else {
+            echo '<script>alert("Failed to process your registration. Please try again.");</script>';
+        }
+
+        $stmt->close();
+    }
+
+    $mysqli->close();
+    ?>
     <!----------------------------------------------------------- END OF BE PART OF US --------------------------------------------->
 
     <section class="faqs" id="faqs">
@@ -172,77 +234,16 @@
                     <article class="faq">
                         <div class="faq-icon"><i class="uil uil-plus"></i></div>
                         <div class="question-answer">
-                            <h4>'.$question.'</h4>
-                            <p>'.$answer.'</p>
+                            <h4>' . $question . '</h4>
+                            <p>' . $answer . '</p>
                         </div>
                     </article>';
                 }
                 $result->free();
             }
 
-            $mysqli ->close();
+            $mysqli->close();
             ?>
-
-            <!-- <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>What is TreeSolve?</h4>
-                    <p>
-                        TreeSolve is an initiative dedicated to preserving the world's forests by educating people about their importance and promoting sustainable practices.
-                    </p>
-                </div>
-            </article>
-
-            <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>How can I get involved with TreeSolve?</h4>
-                    <p>
-                        There are several ways to get involved with TreeSolve. You can volunteer at our events, donate to our cause, or spread the word about the importance of preserving our forests.
-                    </p>
-                </div>
-            </article>
-
-            <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>How does TreeSolve promote sustainable practices?</h4>
-                    <p>
-                        TreeSolve promotes sustainable practices by providing educational resources and workshops for individuals and communities to learn about the importance of forests and the impact of deforestation. We also work to plant and maintain trees in vulnerable areas and combat deforestation.
-                    </p>
-                </div>
-            </article>
-
-            <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>How is my donation to TreeSolve used?</h4>
-                    <p>
-                        Donations to TreeSolve are used to fund our programs and initiatives, including tree-planting events, educational workshops, and community outreach programs.
-                    </p>
-                </div>
-            </article>
-
-            <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>What is TreeSolve's impact on the environment?</h4>
-                    <p>
-                        TreeSolve has a significant impact on the environment by educating people about the importance of forests and promoting sustainable practices. Our efforts have led to the planting and maintenance of thousands of trees in vulnerable areas, combatting deforestation and promoting a greener future.
-                    </p>
-                </div>
-            </article>
-
-            <article class="faq">
-                <div class="faq-icon"><i class="uil uil-plus"></i></div>
-                <div class="question-answer">
-                    <h4>Is TreeSolve a registered nonprofit organization?</h4>
-                    <p>
-                        Yes, TreeSolve is a registered nonprofit organization. We are committed to transparency and accountability, and our financial statements and annual reports are available for public review.
-
-                    </p>
-                </div>
-            </article> -->
         </div>
     </section>
     <!----------------------------------------------------------- END OF FAQS ----------------------------------->
@@ -328,6 +329,18 @@
                 }
             }
         });
+    </script>
+    <script>
+        function showPopupForm(title) {
+            document.getElementById('popupFormOverlay').style.display = 'block';
+            document.getElementById('popupForm').style.display = 'block';
+            document.getElementById('popupFormTitle').textContent = title;
+        }
+
+        function closePopupForm() {
+            document.getElementById('popupFormOverlay').style.display = 'none';
+            document.getElementById('popupForm').style.display = 'none';
+        }
     </script>
 </body>
 
