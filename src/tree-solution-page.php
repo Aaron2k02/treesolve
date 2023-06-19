@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <!--Javascript file -->
     <script src="./js/main.js"></script>
+    <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
+</script>
     <script type="text/javascript">
     (function(){
     emailjs.init("79bWaspqQMXZDOZ4T");
@@ -38,21 +39,12 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <?php
-                    session_start();
-                    if(isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="home-page.php">Home</a></li>';
-                        echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
-                        echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
-                        echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
-                        echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
-                        echo '<li><a href="about-us-page.php">About Us</a></li>';
-                    } else {
-                        echo '<li><a href="home-page.php">Home</a></li>';
-                        echo '<li><a href="login.php">Become one of us</a></li>';
-                        echo '<li><a href="about-us-page.php">About Us</a></li>';
-                    }
-                ?>
+                <li><a href="home-page-in-session.php">Home</a></li>
+                <li><a href="tree-solution-page-in-session.php">Tree Solution</a></li>
+                <li><a href="news&publication-page-in-session.php">News &amp; Publications</a></li>
+                <li><a href="get-involved-page-in-session.html">Get Involved</a></li>
+                <li><a href="#" onclick="confirmLogout()">Log Out</a></li>
+                <li><a href="about-us-page-in-session.html">About Us</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -70,12 +62,12 @@
         <input type="text" id="searchInput" placeholder="Search..." oninput="searchTrees()">
         <table id="treeTable">
             <tr>
-                <th>Name </th>
-                <th>Location </th>
-                <th>Soil Type </th>
-                <th>Characteristics </th>
-                <th>Benefits </th>
-                <th>Picture </th>
+                <th onclick="sortTable(0)">Name </th>
+                <th onclick="sortTable(1)">Location </th>
+                <th onclick="sortTable(2)">Soil Type </th>
+                <th onclick="sortTable(3)">Characteristics </th>
+                <th onclick="sortTable(4)">Benefits </th>
+                <th onclick="sortTable(5)">Picture </th>
             </tr>
             <?php 
                 $username = "root"; 
@@ -107,6 +99,47 @@
                 } 
             ?>
         </table>
+
+        <script>
+    function sortTable(column) {
+        var table, rows, switching, shouldSwitch, x, y, shouldSwitchData, dir;
+        table = document.getElementById("treeTable");
+        switching = true;
+        dir = "asc";
+      
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            
+            for (var i = 1; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("td")[column];
+                y = rows[i + 1].getElementsByTagName("td")[column];
+
+                shouldSwitchData =
+                    isNaN(parseFloat(x.innerHTML)) || isNaN(parseFloat(y.innerHTML))
+                        ? x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()
+                        : parseFloat(x.innerHTML) > parseFloat(y.innerHTML);
+
+                if (shouldSwitchData) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+
+            if (dir === "asc") {
+                dir = "desc";
+            } else {
+                dir = "asc";
+            }
+        }
+    }
+</script>
         <!--end of table-->
 
         <section  class="container testimonial_Container mySwiper">
@@ -229,11 +262,11 @@
             <div class="footer-2">
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
-                    <li><a href="home-page.php">Home</a></li>
-                    <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                    <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.php">Get Involved</a></li>
-                    <li><a href="about-us-page.php">About Us</a></li>
+                    <li><a href="home-page-in-session.php">Home</a></li>
+                    <li><a href="tree-solution-page-in-session.php">Tree Solution</a></li>
+                    <li><a href="news&publication-page-in-session.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page-in-session.html">Get Involved</a></li>
+                    <li><a href="about-us-page-in-session.html">About Us</a></li>
                 </ul>
             </div>
 
@@ -307,5 +340,3 @@
       });</script>
 </body>
 </html>
-C:\Users\hzrn\Downloads\open source\treesolve\src\tree-solution-page.php
-C:\xampp\htdocs\treesolve\src\tree-solution-page.php
