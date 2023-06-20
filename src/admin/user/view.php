@@ -53,13 +53,13 @@
         <br>
         <table>
             <tr>
-                <th>Id </th>
-                <th>Email </th>
-                <th>First Name </th>
-                <th>Last Name </th>
-                <th>Contact Number </th>
-                <th>In Mailing List </th>
-                <th>Operation </th>
+                <th>Id&nbsp;</th>
+                <th>Email&nbsp;</th>
+                <th>First Name&nbsp;</th>
+                <th>&nbsp;Last Name&nbsp;</th>
+                <th>&nbsp;Contact Number&nbsp;</th>
+                <th>&nbsp;In Mailing List&nbsp;</th>
+                <th>&nbsp;Operation </th>
             </tr>
             <?php 
                 $username = "root"; 

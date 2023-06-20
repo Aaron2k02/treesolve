@@ -18,7 +18,7 @@
         } else {
             $targetDirectory = 'uploads/';
             $image_path = $targetDirectory . basename($file['name']);
-            move_uploaded_file($file['tmp_name'], '../../'.$targetFilePath);
+            move_uploaded_file($file['tmp_name'], '../../'.$image_path);
         }
     }
 
