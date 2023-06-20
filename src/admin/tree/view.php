@@ -37,7 +37,6 @@
                 <li><a href="../home.php">Admin Home</a></li>
                 <li><a href="#">Tree</a></li>
                 <li><a href="../article/view.php">Article</a></li>
-                <li><a href="../forum/view.php">Forum</a></li>
                 <li><a href="../user/view.php">User</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
