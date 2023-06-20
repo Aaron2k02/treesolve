@@ -5,7 +5,7 @@
     $content = $mysqli->real_escape_string($_POST['content']);
     
     $query = "INSERT INTO article
-        VALUES (DEFAULT, '$title', '$content')";
+        VALUES (DEFAULT, '$title', '$content', NOW())";
 
     $mysqli->query($query);
     $mysqli->close();

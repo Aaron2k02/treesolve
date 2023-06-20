@@ -56,6 +56,7 @@
                 <th>Id </th>
                 <th>Title </th>
                 <th>Content </th>
+                <th>Date </th>
                 <th>Operation </th>
             </tr>
             <?php 
@@ -67,12 +68,14 @@
                         $id = $row["id"];
                         $title = $row["title"];
                         $content = $row["content"];
+                        $date = $row["date"];
 
                         echo 
                             '<tr> 
                                 <td>'.$id.'</td> 
                                 <td>'.$title.'</td> 
                                 <td>'.$content.'</td> 
+                                <td>'.$date.'</td> 
                                 <td><a href="edit.php?id='.$id.'">Update</a><br><a href="delete.php?id='.$id.'">Delete</a></td> 
                             </tr>';
                     }
