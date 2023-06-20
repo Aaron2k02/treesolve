@@ -100,25 +100,6 @@ CREATE TABLE IF NOT EXISTS `natureData`.`user` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `natureData`.`forum`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `natureData`.`forum` (
-  `forum_id` INT NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `forum_title` VARCHAR(45) NOT NULL,
-  `forum_content` VARCHAR(150) NOT NULL,
-  `forum_image_path` VARCHAR(45) NULL,
-  PRIMARY KEY (`forum_id`),
-  INDEX `fk_user_forum_idx` (`user_id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_forum`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `natureData`.`user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
