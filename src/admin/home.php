@@ -30,7 +30,7 @@
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="home-page.html">
+            <a href="../home-page.php">
                 <img src="../res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
