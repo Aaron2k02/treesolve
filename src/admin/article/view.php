@@ -1,5 +1,6 @@
 <!-- this page edited by chunhong -->
 <?php 
+    session_start();
     if(!isset($_SESSION['admin_logged_in'])) {
         header("Location: ../../home-page.php");
         exit;
