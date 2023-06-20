@@ -1,15 +1,11 @@
 <?php
-    session_start(); // Start the session
+session_start();
 
-    if (isset($_POST['logout'])) {
-        // Clear all session variables
-        session_unset();
+// Unset the logged_in session variable
+unset($_SESSION['logged_in']);
 
-        // Destroy the session
-        session_destroy();
-
-        // Redirect the user to the login page or any other desired page
-        header("Location: home-page.php");
-        exit;
-    }
+// Redirect to login.php
+header("Location: login.php");
+exit;
 ?>
+

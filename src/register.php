@@ -1,5 +1,5 @@
 <?php
-    require_once('config.php');
+    require_once('connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +29,21 @@
                 <img src="./res/Treesolve-removebg-preview.png"  alt="treesolvelogo" width="170px">
             </a>
             <ul class="nav-menu">
-                <li><a href="home-page.php">Home</a></li>
-                <li><a href="tree-solution-page.php">Tree Solution</a></li>
-                <li><a href="news&publication-page.php">News &amp; Publications</a></li>
-                <li><a href="get-involved-page.html">Get Involved</a></li>
-                <li><a href="login-page.php">Become one of us</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
+                <?php
+                    session_start();
+                    if(isset($_SESSION['logged_in'])) {
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="tree-solution-page.php">Tree Solution</a></li>';
+                        echo '<li><a href="news&publication-page.php">News &amp; Publications</a></li>';
+                        echo '<li><a href="get-involved-page.php">Get Involved</a></li>';
+                        echo '<li><a href="logout.php" onclick="confirmLogout()"> Log Out </a> </li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
+                    } else {
+                        echo '<li><a href="home-page.php">Home</a></li>';
+                        echo '<li><a href="login.php">Become one of us</a></li>';
+                        echo '<li><a href="about-us-page.php">About Us</a></li>';
+                    }
+                ?>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
             <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
@@ -42,29 +51,7 @@
     </nav>
     <!------------------------------------------------ End Of nav ---------------------------------------------->
     <main>
-        <div>
-            <?php
-                if(isset($_POST['register']))
-                {
-                    $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
-                    $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
-                    $email = mysqli_real_escape_string($con,$_POST['email']);
-                    $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
-                    $password = mysqli_real_escape_string($con,$_POST['password']);
-
-                    $query = "insert into user (firstname, lastname, email,phonenumber, password) values ('$firstname', '$lastname', '$email', '$phonenumber', '$password')";
-                    $result = mysqli_query($con,$query);
-                    if($result)
-                    {
-                        echo ' Your Record Has Been Saved in the Database ';
-                    }
-                    else
-                    {
-                        echo ' Please Check Your Query ';
-                    }
-                }
-            ?>
-        </div>
+   
     <div class="border-register">
         <div class="register-container">
             <div class="image-container-register" >
@@ -75,7 +62,7 @@
             <div class="form-container">
                 <div class="form-box register">
                     <h2 style="color: black;">Registration</h2>
-                    <form action="login-page.php" method="post">
+                    <form action="register.php" method="post">
                         <div class="input-box">
                             <span class="icon"><ion-icon name="person"></ion-icon></span>
                             <input type="text" name="firstname" required>
@@ -104,7 +91,7 @@
                         <div class="remember-forgot">
                         
                         </div>
-                        <button id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</button>
+                        <input id="regbtn" type="submit" class="btnSubmit" style="color: white;" name="register">Register</input>
                         <div class="login-register">
                             <p>Already have an account? 
                                 <a href="login-page.php" class="login-link">Login</a> </p>
@@ -114,6 +101,41 @@
             </div>
         </div>
         </div>
+
+        
+
+        <?php
+            include './connect.php';
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['firstname'])) {
+                $firstname = mysqli_real_escape_string($mysqli, $_POST['firstname']);
+                $lastname = mysqli_real_escape_string($mysqli, $_POST['lastname']);
+                $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+                $phonenumber = mysqli_real_escape_string($mysqli, $_POST['phonenumber']);
+                $password = mysqli_real_escape_string($mysqli, $_POST['password']);
+
+                // Validate input data
+                if (empty($firstname) || empty($lastname) || empty($email) || empty($phonenumber) || empty($password)) {
+                    echo 'Please fill in all the fields.';
+                } else {
+                    // Hash the password
+                   
+
+                    // Prepare and execute the query
+                    $query = "INSERT INTO user (first_name, last_name, email, contact_number, `password`, in_mailing_list) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$password', 0)";
+                    $result = mysqli_query($mysqli, $query);
+
+                    if ($result) {
+                        $_SESSION['logged_in'] = true;
+                        exit;
+                    } else {
+                        echo 'Error: ' . mysqli_error($mysqli);
+                    }
+                }
+            }
+        ?>
+        
+
     </main>
 
     <!------------------------------------------------ End Of content ---------------------------------------------->
@@ -130,10 +152,10 @@
                 <h4>Permalinks</h4>
                 <ul class="permalinks">
                     <li><a href="home-page.php">Home</a></li>
-                    <li><a href="tree-solution-page.html">Tree Solution</a></li>
-                    <li><a href="news&publication-page.html">News &amp; Publications</a></li>
-                    <li><a href="get-involved-page.html">Get Involved</a></li>
-                    <li><a href="about-us-page.html">About Us</a></li>
+                    <li><a href="tree-solution-page.php">Tree Solution</a></li>
+                    <li><a href="news&publication-page.php">News &amp; Publications</a></li>
+                    <li><a href="get-involved-page.php">Get Involved</a></li>
+                    <li><a href="about-us-page.php">About Us</a></li>
                 </ul>
             </div>
 

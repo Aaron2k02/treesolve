@@ -1,5 +1,9 @@
 <!-- this page edited by chunhong -->
-<?php 
+<?php  
+    if(!isset($_SESSION['admin_logged_in'])) {
+        header("Location: ../../home-page.php");
+        exit;
+    }
     if(isset($_GET['id'])) {
         include '../connect.php';
         $query = "SELECT * FROM forum WHERE forum_id =".$_GET['id'];
