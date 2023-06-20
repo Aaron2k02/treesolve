@@ -37,7 +37,6 @@
                 <li><a href="../home.php">Admin Home</a></li>
                 <li><a href="view.php">Tree</a></li>
                 <li><a href="../article/view.php">Article</a></li>
-                <li><a href="../forum/view.php">Forum</a></li>
                 <li><a href="../user/view.php">User</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -56,11 +55,11 @@
             </div>
             <div class="main-right">
                 <h3>Add Tree</h3>
-                <form class="register__form" action="add.php" method="post">
+                <form class="register__form" action="add.php" method="post" enctype="multipart/form-data">
                     <input type="text" name="species" required placeholder="Species">
                     <input type="text" name="location" required placeholder="Location">
                     <input type="text" name="soil_type" required placeholder="Soil Type">
-                    <input type="text" name="image_path" required placeholder="Image Path">
+                    <input type="file" name="image" required placeholder="Image">
 
                     <textarea name="characteristic" rows = "7" placeholder="Characteristic" required></textarea>
                     <textarea name="benefits" rows = "7" placeholder="Benefits" required></textarea>

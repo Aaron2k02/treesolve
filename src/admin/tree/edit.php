@@ -60,7 +60,6 @@
                 <li><a href="../home.php">Admin Home</a></li>
                 <li><a href="view.php">Tree</a></li>
                 <li><a href="../article/view.php">Article</a></li>
-                <li><a href="../forum/view.php">Forum</a></li>
                 <li><a href="../user/view.php">User</a></li>
             </ul>
             <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -79,12 +78,12 @@
             </div>
             <div class="main-right">
                 <h3>Edit Tree</h3>
-                <form class="register__form" action="update.php" method="post">
+                <form class="register__form" action="update.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $id?>">
                     <input type="text" name="species" required value="<?php echo $species ?>">
                     <input type="text" name="location" required value="<?php echo $location ?>">
                     <input type="text" name="soil_type" required value="<?php echo $soil_type ?>">
-                    <input type="text" name="image_path" required value="<?php echo $image_path ?>">
+                    <input type="file" name="image" required>
 
                     <textarea name="characteristic" rows = "7" placeholder="Characteristic"><?php echo $characteristic ?></textarea>
                     <textarea name="benefits" rows = "7" placeholder="Benefits" required><?php echo $benefits ?></textarea>
