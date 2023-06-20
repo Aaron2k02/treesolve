@@ -103,7 +103,6 @@ session_start();
                     <li><a href="../home.php">Admin Home</a></li>
                     <li><a href="../tree/view.php">Tree</a></li>
                     <li><a href="view.php">Article</a></li>
-                    <li><a href="../forum/view.php">Forum</a></li>
                     <li><a href="../user/view.php">User</a></li>
                 </ul>
             </div>
