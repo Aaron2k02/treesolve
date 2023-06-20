@@ -1,7 +1,6 @@
 <?php
     include '../connect.php';
 
-    $id = $mysqli->real_escape_string($_POST['id']);
     $species = $mysqli->real_escape_string($_POST['species']);
     $location= $mysqli->real_escape_string($_POST['location']);
     $soil_type = $mysqli->real_escape_string($_POST['soil_type']);

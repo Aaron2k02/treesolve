@@ -83,7 +83,7 @@
                                 <td>'.$soil_type.'</td> 
                                 <td>'.$characteristic.'</td> 
                                 <td>'.$benefits.'</td> 
-                                <td><img src="'.$image_path.'" height="150" width="150"></td>
+                                <td><img src="../../'.$image_path.'" height="150" width="150"></td>
                                 <td><a href="edit.php?id='.$id.'">Update</a><br><a href="delete.php?id='.$id.'">Delete</a></td> 
                             </tr>';
                     }

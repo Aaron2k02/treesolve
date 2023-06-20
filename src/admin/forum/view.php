@@ -77,7 +77,7 @@
                         echo 
                             '<tr> 
                                 <td>'.$forum_title.'</td> 
-                                <td><img src="'.$forum_image_path.'" height="150" width="150"></td>
+                                <td><img src="../../'.$forum_image_path.'" height="150" width="150"></td>
                                 <td>'.$forum_content.'</td> 
                                 <td>'.$user_id.'</td>  
                                 <td>'.$name.'</td> 
